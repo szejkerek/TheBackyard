@@ -22,8 +22,12 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Visible internal variables (do not change)")]
     [SerializeField] private Vector3 playerVelocity;
+    [SerializeField] private Vector3 playerFlatVelocity;
+    [SerializeField] private float playerSpeed;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool hitCeiling;
+    [SerializeField] private bool isOnDownSlope;
+    [SerializeField] private Vector3 groundNormal;
 
     private CharacterController controller;
     private Vector3 forward;
@@ -43,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = CheckForGroundCollision();
         hitCeiling = CheckForCeilingCollision();
+        isOnDownSlope = PlayerOnDownSlope();
 
         Vector3 forwardMovement = forward * Input.GetAxisRaw("Vertical");
         Vector3 rightMovement = right * Input.GetAxisRaw("Horizontal");
@@ -63,7 +68,31 @@ public class PlayerMovement : MonoBehaviour
         playerVelocity.y += gravityForce * Time.deltaTime;
         playerVelocity.z = wishDir.z;
 
+        playerFlatVelocity = new Vector3(playerVelocity.x, 0.0f, playerVelocity.z);
+
+        if(isOnDownSlope)
+        {
+            CorrectForSlopes();
+        }
+
+        playerSpeed = playerVelocity.magnitude;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    private bool PlayerOnDownSlope()
+    {
+        Ray ray = new(transform.position + Vector3.down, Vector3.down);
+        Physics.Raycast(ray, out RaycastHit rayHit, 0.5f);
+
+        float angle = Vector3.Angle(Vector3.up, rayHit.normal);
+        groundNormal = rayHit.normal;
+
+        return angle > 0.0f && angle < controller.slopeLimit && Vector3.Dot(groundNormal, playerFlatVelocity) > 0.0f;
+    }
+
+    private void CorrectForSlopes()
+    {
+        playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed;
     }
 
     private bool CheckForGroundCollision()
