@@ -5,16 +5,16 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] ModularDataSet modularDataSet;
-    [SerializeField] List<PlayableCharacter> playableCharactersInfo;
+    [SerializeField] List<CharacterInfo> playableCharactersInfo;
 
     public ArenaInformation ArenaInformation => arenaInformation;
     ArenaInformation arenaInformation;
 
     private void Start()
     {
-        playableCharactersInfo.Add(new PlayableCharacter(modularDataSet));
-        playableCharactersInfo.Add(new PlayableCharacter(modularDataSet));
-        playableCharactersInfo.Add(new PlayableCharacter(modularDataSet));
+        playableCharactersInfo.Add(new CharacterInfo(modularDataSet));
+        playableCharactersInfo.Add(new CharacterInfo(modularDataSet));
+        playableCharactersInfo.Add(new CharacterInfo(modularDataSet));
     }
 
     public void SetArenaInformation(ArenaInformation arenaInformation)
