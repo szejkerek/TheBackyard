@@ -237,12 +237,13 @@ MonoBehaviour:
   jumpKey: 32
   groundCastCheckDistance: 0.1
   ceilingCastCheckDistance: 0.1
+  ladderCastCheckDistance: 0.2
   groundMask:
     serializedVersion: 2
     m_Bits: 256
   ladderMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   playerVelocity: {x: 0, y: 0, z: 0}
   playerFlatVelocity: {x: 0, y: 0, z: 0}
   playerSpeed: 5
@@ -251,6 +252,7 @@ MonoBehaviour:
   isOnDownSlope: 0
   isClimbingLadder: 0
   groundNormal: {x: 0, y: 0, z: 0}
+  ladderNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &2877858024488752026
 GameObject:
   m_ObjectHideFlags: 0
