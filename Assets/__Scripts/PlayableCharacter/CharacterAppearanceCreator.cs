@@ -17,7 +17,7 @@ public class CharacterAppearanceCreator : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.G))
         {
-            GenerateCharacterAppearance(new CharacterInfo(modularDataSet).CustomModularSet);
+            RandomizeSet();
         }
     }
 
@@ -38,5 +38,13 @@ public class CharacterAppearanceCreator : MonoBehaviour
 
         LegL.color = customModular.ShoeColor;
         LegR.color = customModular.ShoeColor;
+    }
+
+    public CustomModularSet RandomizeSet()
+    {
+        CustomModularSet randomizedSet = new CustomModularSet();
+        randomizedSet.RandomizeSet(modularDataSet);
+        GenerateCharacterAppearance(randomizedSet);
+        return randomizedSet;
     }
 }
