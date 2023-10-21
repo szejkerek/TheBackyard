@@ -58,18 +58,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
-        hitCeiling = CheckForTopCollision(groundMask, ceilingCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
-        isOnDownSlope = PlayerOnDownSlope();
+        isGrounded = controller.isGrounded;
+        //isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
+        //hitCeiling = CheckForTopCollision(groundMask, ceilingCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
+        //isOnDownSlope = PlayerOnDownSlope();
         isClimbingLadder = PlayerOnLadder();
 
         Vector3 forwardMovement = forward * Input.GetAxisRaw("Vertical");
         Vector3 rightMovement = right * Input.GetAxisRaw("Horizontal");
         Vector3 wishDir = Vector3.Normalize(rightMovement + forwardMovement) * movementSpeed;
 
-        if (isGrounded && playerVelocity.y < 0.0f || hitCeiling && playerVelocity.y > 0.0f)
+        if (isGrounded && playerVelocity.y < 0.0f /*|| hitCeiling && playerVelocity.y > 0.0f*/)
         {
-            playerVelocity.y = 0.0f;
+            playerVelocity.y = -0.05f;
         }
 
         if (Input.GetKey(jumpKey) && isGrounded && Time.time - lastJumpTimestamp >= jumpCooldown)
@@ -84,17 +85,17 @@ public class PlayerMovement : MonoBehaviour
         
         playerFlatVelocity = new Vector3(playerVelocity.x, 0.0f, playerVelocity.z);
 
-        if(isOnDownSlope)
+        /*if(isOnDownSlope)
         {
             playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed + Vector3.up * playerVelocity.y;
-        }
+        }*/
 
         if(isClimbingLadder)
         {
             CorrectLadderMovement();
         }
 
-        playerSpeed = playerVelocity.magnitude;
+        playerSpeed = playerVelocity.magnitude; //po co to?
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
