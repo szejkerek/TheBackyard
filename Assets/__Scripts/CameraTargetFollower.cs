@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class CameraTargetFollower : MonoBehaviour
 {
-    [SerializeField] private Transform targetTransform;
-    [SerializeField] private Vector3 viewOffset;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private float speed;
 
-    private Vector3 offset;
+    public Vector3 initOffset;
 
     void Start()
     {
-        offset = transform.position - targetTransform.position;
+        initOffset = transform.position;
+        transform.position = playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight;
     }
 
     void LateUpdate()
     {
-        transform.position = targetTransform.position + viewOffset + offset;
+        transform.position = Vector3.Lerp(transform.position, playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight, speed * Time.deltaTime);
     }
 }
