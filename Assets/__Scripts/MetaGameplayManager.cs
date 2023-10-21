@@ -6,26 +6,32 @@ public class MetaGameplayManager : MonoBehaviour
 {
     [SerializeField] TMP_Text moneyText;
     [SerializeField] TMP_Text dayText;
+    [SerializeField] TMP_Text endGame;
 
     private void Start()
     {
         MoneyManager.Instance.OnMoneyChange += UpdateMoneyDisplay;
-        DayNightCycleManager.Instance.OnNextDay += UpdateDayDisplay;
+        DayNightCycleManager.Instance.OnNewCycle += UpdateDayDisplay;
+        DayNightCycleManager.Instance.OnCycleEnded += EndGame;
 
-        DayNightCycleManager.Instance.GoToNextDay();
+        DayNightCycleManager.Instance.GoToNextCycle();
+    }
+
+    private void EndGame()
+    {
+        endGame.gameObject.SetActive(true);
     }
 
     private void UpdateDayDisplay()
     {
-        string day = DayNightCycleManager.Instance.CurrentDay.ToString();
-
-        dayText.text = $"{day} day";
+        string dayIndex = DayNightCycleManager.Instance.CurrentDay.ToString();
+        string cycleType = DayNightCycleManager.Instance.IsDay ? "Day" : "Night";
+        dayText.text = $"{dayIndex} day - {cycleType}";
     }
 
     void UpdateMoneyDisplay()
     {
         string moneyString = MoneyManager.Instance.Money.ToString();
-
         moneyText.text = $"{moneyString} money";
     }
 }
