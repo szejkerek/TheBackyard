@@ -1,11 +1,15 @@
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LavaGameManager : MonoBehaviour
 {
     [Header("Game settings")]
     [SerializeField] private int touchLimit;
     [SerializeField] private int touchUpwardsFroce;
+    [SerializeField] private int gameTimeInSeconds;
+    [SerializeField] private float lavaDropdownSpeed;
+    public UnityEvent playerWonEvent;
+    public UnityEvent playerLostEvent;
 
     [Header("Regular state")]
     [SerializeField] private int[] growthSteps = { 1, 1, 2, 2, 3, 3 };
@@ -20,9 +24,14 @@ public class LavaGameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private RisingLava lavaPool;
     [SerializeField] private GameObject player;
+
+    [Space]
+    [Header("Heretic debug")]
+    [SerializeField] private string timeLeft;
     
     private PlayerMovement pm;
     private CameraTargetFollower ctf;
+    private TriggerTimer winTimer;
 
     private int touchesSoFar = 0;
     private int sign = 1;
@@ -36,6 +45,12 @@ public class LavaGameManager : MonoBehaviour
         }
 
         ctf = FindObjectOfType<CameraTargetFollower>();
+
+        winTimer = new();
+        winTimer.SetInterval(gameTimeInSeconds * 1000.0f);
+        winTimer.SetTriggerFunction(OnPlayerWon);
+        winTimer.SetSingleShot(true);
+        winTimer.Start();
     }
 
     void Start()
@@ -52,7 +67,8 @@ public class LavaGameManager : MonoBehaviour
 
     void Update()
     {
-        
+        winTimer.Update(Time.deltaTime * 1000.0f);
+        timeLeft = Clock.FormatToMinSec((int)winTimer.TimeLeft);
     }
 
     void OnObjectLavaTrigger(GameObject collidedObject)
@@ -64,15 +80,7 @@ public class LavaGameManager : MonoBehaviour
 
         if(touchesSoFar >= touchLimit)
         {
-            lavaPool.Active = false;
-            CancelInvoke();
-
-            if(ctf)
-            {
-                ctf.enabled = false;
-            }
-
-            lavaPool.OnLavaTrigger.RemoveListener(OnObjectLavaTrigger);
+            OnPlayerLost();
 
             return;
         }
@@ -102,5 +110,34 @@ public class LavaGameManager : MonoBehaviour
             sign *= -1;
             currentStep += sign;
         }
+    }
+
+    private void OnPlayerWon()
+    {
+        lavaPool.Active = true;
+        lavaPool.UpwardsGrowthPerSecond = lavaDropdownSpeed;
+
+        playerWonEvent?.Invoke();
+        CancelInvoke();
+
+        Debug.Log("Player won");
+    }
+
+    private void OnPlayerLost()
+    {
+        CancelInvoke();
+
+        if (ctf)
+        {
+            ctf.enabled = false;
+        }
+
+        lavaPool.Active = false;
+        lavaPool.OnLavaTrigger.RemoveListener(OnObjectLavaTrigger);
+
+        playerLostEvent?.Invoke();
+        winTimer.Stop();
+        
+        Debug.Log("Player lost :OOOO");
     }
 }

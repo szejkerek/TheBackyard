@@ -6,6 +6,7 @@ public class CycleManager
     public Action OnCycleEnded;
     public Action OnNewCycle;
     public Action OnNextDay;
+    public Action OnNoMoreHoursLeft;
 
     public bool IsDay => isDay;
     public int CurrentDay => currentDay;
@@ -38,6 +39,16 @@ public class CycleManager
         OnNewCycle?.Invoke();
     }
 
+    public void DecrementHours(int ammount)
+    {
+        hoursLeft -= ammount;
+        if(hoursLeft < 0)
+        {
+            hoursLeft = 0;
+            OnNoMoreHoursLeft?.Invoke();
+        }
+    }
+
     void StartDay()
     {
         isDay = true;
@@ -59,5 +70,5 @@ public class CycleManager
         SceneManager.Instance.LoadScene(SceneEnum.NightManagementScene);
     }
 
-
+    
 }
