@@ -31,14 +31,14 @@ public class CustomModularSet
 
     public void RandomizeSet(ModularDataSet modularDataSet)
     {
-        SkinColor = modularDataSet.SkinColor[Random.Range(0, modularDataSet.SkinColor.Count)];
-        HairColor = modularDataSet.HairColor[Random.Range(0, modularDataSet.HairColor.Count)];
-        ShoeColor = modularDataSet.ShoeColor[Random.Range(0, modularDataSet.ShoeColor.Count)];
-        Body = modularDataSet.Body[Random.Range(0, modularDataSet.Body.Count)];
-        Hair =  modularDataSet.Hair[Random.Range(0, modularDataSet.Hair.Count)];
-        Brows = modularDataSet.Brows[Random.Range(0, modularDataSet.Brows.Count)];
-        Mouth = modularDataSet.Mouth[Random.Range(0, modularDataSet.Mouth.Count)];
-        Eyes = modularDataSet.Eyes[Random.Range(0, modularDataSet.Eyes.Count)];
-        Nose = modularDataSet.Nose[Random.Range(0, modularDataSet.Nose.Count)];
+        SkinColor = modularDataSet.SkinColor.GetRandomElement();
+        HairColor = modularDataSet.HairColor.GetRandomElement();
+        ShoeColor = modularDataSet.ShoeColor.GetRandomElement();
+        Body = modularDataSet.Body.GetRandomElement();
+        Hair =  modularDataSet.Hair.GetRandomElement();    
+        Brows = modularDataSet.Brows.GetRandomElement();
+        Mouth = modularDataSet.Mouth.GetRandomElement();
+        Eyes = modularDataSet.Eyes.GetRandomElement();
+        Nose = modularDataSet.Nose.GetRandomElement();
     }
 }
