@@ -6068,15 +6068,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchLimit: 3
   touchUpwardsFroce: 10
+  gameTimeInSeconds: 10
+  lavaDropdownSpeed: -30
+  playerWonEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  playerLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
   growthSteps: 010000000100000002000000020000000300000003000000
   intervalsBetweenSteps: 020000000200000003000000030000000400000004000000
   suddenDeathGrowthPerSecond: 6
   secondsToSuddenDeath: 10
   lavaPool: {fileID: 684937098}
   player: {fileID: 1671767394}
-  timeString: 
-  seconds: 0
-  miliseconds: 0
+  timeLeft: 
 --- !u!4 &937359627
 Transform:
   m_ObjectHideFlags: 0
