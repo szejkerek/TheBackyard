@@ -1,19 +1,19 @@
 using System;
-using UnityEngine;
 
-public class MoneyManager : Singleton<MoneyManager>
+public class MoneyHolder
 {
     public Action OnMoneyChange;
 
-    [SerializeField] int startMoneyMin = 20;
-    [SerializeField] int startMoneyMax = 70;
-
+    int startMoneyMin;
+    int startMoneyMax;
 
     public int Money => money;
     int money = 0;
 
-    private void Start()
+    public MoneyHolder(int startMoneyMin = 20, int startMoneyMax = 70)
     {
+        this.startMoneyMin = startMoneyMin;
+        this.startMoneyMax = startMoneyMax;
         GenerateStartingMoney();
     }
 
