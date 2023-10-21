@@ -17,7 +17,7 @@ public class ModularDataSet : ScriptableObject
 }
 
 [System.Serializable]
-public class PlayableCharacterModularSet
+public class CustomModularSet
 {
     public Color SkinColor;
     public Color HairColor;
