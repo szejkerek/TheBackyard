@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3776031463205304024}
+  - component: {fileID: 1467586824624641108}
+  - component: {fileID: 1211513980486189267}
   m_Layer: 0
   m_Name: Tree Big
   m_TagString: Playground_Toy
@@ -32,6 +34,41 @@ Transform:
   - {fileID: 6796354660534052217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467586824624641108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887675270589195631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f27f15f57414c4d813da906f3a051c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosMin: {x: 0, y: 0}
+  spawnPosMax: {x: 0, y: 0}
+--- !u!135 &1211513980486189267
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887675270589195631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &725006377053736429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43,6 +80,10 @@ PrefabInstance:
     - target: {fileID: 6251621407145054174, guid: e82daa09e0925164282b8c8639cd585c, type: 3}
       propertyPath: m_Name
       value: SM_Toy_07 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251621407145054174, guid: e82daa09e0925164282b8c8639cd585c, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 6251621407145054174, guid: e82daa09e0925164282b8c8639cd585c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -191,6 +232,10 @@ PrefabInstance:
       value: SM_Grass_01 (26)
       objectReference: {fileID: 0}
     - target: {fileID: 6391572996815671003, guid: 5fe99a1fac0a3004cafced165f34aba2, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391572996815671003, guid: 5fe99a1fac0a3004cafced165f34aba2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -276,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Flowers_03 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5654759934159595845, guid: b2f9830beaa7bc64a93b9cec2e7a3916, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -358,6 +407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Stone_01 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5235933020984592719, guid: fe8749275d701b4418ca6a811ea83976, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -379,6 +432,10 @@ PrefabInstance:
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_Name
       value: SM_Bench_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -527,6 +584,10 @@ PrefabInstance:
       value: SM_Grass_02 (52)
       objectReference: {fileID: 0}
     - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -613,6 +674,10 @@ PrefabInstance:
       value: SM_Grass_01 (28)
       objectReference: {fileID: 0}
     - target: {fileID: 6391572996815671003, guid: 5fe99a1fac0a3004cafced165f34aba2, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391572996815671003, guid: 5fe99a1fac0a3004cafced165f34aba2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -637,6 +702,10 @@ PrefabInstance:
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_Name
       value: SM_Bench_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -785,6 +854,10 @@ PrefabInstance:
       value: SM_Grass_02 (54)
       objectReference: {fileID: 0}
     - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -809,6 +882,10 @@ PrefabInstance:
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_Name
       value: SM_Bench_03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -895,6 +972,10 @@ PrefabInstance:
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_Name
       value: SM_Bench_03 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 4731363833152447829, guid: 7771c02e50845c148830a38f099c87ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1043,6 +1124,10 @@ PrefabInstance:
       value: SM_Grass_01 (27)
       objectReference: {fileID: 0}
     - target: {fileID: 6391572996815671003, guid: 5fe99a1fac0a3004cafced165f34aba2, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391572996815671003, guid: 5fe99a1fac0a3004cafced165f34aba2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1129,6 +1214,10 @@ PrefabInstance:
       value: SM_Grass_02 (55)
       objectReference: {fileID: 0}
     - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1153,6 +1242,10 @@ PrefabInstance:
     - target: {fileID: 3855868508848879697, guid: 6a3bea1dd0263bf43861bde07f3af72f, type: 3}
       propertyPath: m_Name
       value: SM_Tree_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855868508848879697, guid: 6a3bea1dd0263bf43861bde07f3af72f, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 3855868508848879697, guid: 6a3bea1dd0263bf43861bde07f3af72f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1364,6 +1457,10 @@ PrefabInstance:
       value: SM_Lamp_01 (11)
       objectReference: {fileID: 0}
     - target: {fileID: 6592526923072191675, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592526923072191675, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1448,6 +1545,10 @@ PrefabInstance:
     - target: {fileID: 6592526923072191675, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
       propertyPath: m_Name
       value: SM_Lamp_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592526923072191675, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 6592526923072191675, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1536,6 +1637,10 @@ PrefabInstance:
       value: SM_Grass_02 (53)
       objectReference: {fileID: 0}
     - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1620,6 +1725,10 @@ PrefabInstance:
     - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
       propertyPath: m_Name
       value: SM_Grass_02 (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 6767546374251425599, guid: e2947d46bde79124c82b000f57bf9ca1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1707,6 +1816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Stone_01 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5235933020984592719, guid: fe8749275d701b4418ca6a811ea83976, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1790,6 +1903,10 @@ PrefabInstance:
       value: SM_Trash_02 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6598686750349785018, guid: ee4a7f34f5261724c901112cd4fb5846, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598686750349785018, guid: ee4a7f34f5261724c901112cd4fb5846, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1814,6 +1931,10 @@ PrefabInstance:
     - target: {fileID: 3885205801483390603, guid: 8162285b6b8717e4bb13e44c94b9e83d, type: 3}
       propertyPath: m_Name
       value: SM_Toy_06 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885205801483390603, guid: 8162285b6b8717e4bb13e44c94b9e83d, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 3885205801483390603, guid: 8162285b6b8717e4bb13e44c94b9e83d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1960,6 +2081,10 @@ PrefabInstance:
     - target: {fileID: 6598686750349785018, guid: ee4a7f34f5261724c901112cd4fb5846, type: 3}
       propertyPath: m_Name
       value: SM_Trash_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598686750349785018, guid: ee4a7f34f5261724c901112cd4fb5846, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
       objectReference: {fileID: 0}
     - target: {fileID: 6598686750349785018, guid: ee4a7f34f5261724c901112cd4fb5846, type: 3}
       propertyPath: m_StaticEditorFlags

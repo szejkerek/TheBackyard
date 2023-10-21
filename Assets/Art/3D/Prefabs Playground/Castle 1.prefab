@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1998498614170277544}
   m_Layer: 0
   m_Name: plank_20
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4344845756857117077}
   m_Layer: 0
   m_Name: rail_11
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 8348118386804829716}
   m_Layer: 0
   m_Name: bridge
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,7 +260,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 6720749869746555374}
   m_Layer: 0
   m_Name: towerSquareTopRoofHigh
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 1767356956969320802}
   m_Layer: 0
   m_Name: flagBannerLong (1)
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,7 +474,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 5757916190939523133}
   m_Layer: 0
   m_Name: towerSquareMidOpenHalf
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 2714245980332563168}
   m_Layer: 0
   m_Name: plank_17
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 3656270686862484243}
   m_Layer: 0
   m_Name: rail_10
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 9100349500447919991}
   m_Layer: 0
   m_Name: towerSquarePoles (1)
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -829,7 +829,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 3344278812590583485}
   m_Layer: 0
   m_Name: plank_19
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 3169280283469961247}
   m_Layer: 0
   m_Name: towerSquareMid
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -967,7 +967,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 8796008447808371104}
   m_Layer: 0
   m_Name: plank_22
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 4841637475664529162}
   m_Layer: 0
   m_Name: Medival
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1115,7 +1115,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 709953400171327847}
   m_Layer: 0
   m_Name: towerSquareMid
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1221,7 +1221,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 2472169574143884146}
   m_Layer: 0
   m_Name: towerSquarePoles
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1277,7 +1277,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 6276848298756686361}
   m_Layer: 0
   m_Name: flagBannerLong
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,7 +1384,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 6689830821901095451}
   m_Layer: 0
   m_Name: rail_12
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 7286689375128148755}
   m_Layer: 0
   m_Name: plank_16
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1574,7 +1574,7 @@ GameObject:
   - component: {fileID: 7599299397383711628}
   m_Layer: 0
   m_Name: towerSquareMidOpenHalf
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1617,7 +1617,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 5895880042358508548}
   m_Layer: 0
   m_Name: towerSquarePoles
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1723,7 +1723,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1748,7 +1748,7 @@ GameObject:
   - component: {fileID: 7117007849668339730}
   m_Layer: 0
   m_Name: plank_18
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1831,7 +1831,7 @@ GameObject:
   - component: {fileID: 8115235394363238177}
   m_Layer: 0
   m_Name: rail_9
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 1494017702094776171}
   m_Layer: 0
   m_Name: Playground
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1995,7 +1995,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2017,6 +2017,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3779448085087664614}
   - component: {fileID: 7805592628325706239}
+  - component: {fileID: -2478521380014248228}
+  - component: {fileID: 7187135091036217274}
   m_Layer: 0
   m_Name: Castle 1
   m_TagString: Playground_Toy
@@ -2033,7 +2035,7 @@ Transform:
   m_GameObject: {fileID: 8891840353571974118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.354, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2055,6 +2057,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImaginaryObject: {fileID: 4595093715544184022}
   RealObject: {fileID: 8705334961869159077}
+--- !u!114 &-2478521380014248228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8891840353571974118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f27f15f57414c4d813da906f3a051c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosMin: {x: 0, y: 0}
+  spawnPosMax: {x: 0, y: 0}
+--- !u!135 &7187135091036217274
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8891840353571974118}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8953576191823595170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2105,7 @@ GameObject:
   - component: {fileID: 8222372005831566931}
   m_Layer: 0
   m_Name: plank_21
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2151,7 +2188,7 @@ GameObject:
   - component: {fileID: 6910215011832803923}
   m_Layer: 0
   m_Name: plank_23
-  m_TagString: Untagged
+  m_TagString: Playground_Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2297,6 +2334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: structureRoof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 492512e865ef2b24895ef55010108007, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2325,7 +2366,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2405,6 +2446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flagBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b06e3012dde954c9252ca272ec0924, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2433,7 +2478,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2513,6 +2558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 428c74db0cb1bf14f8f13ed37b25440c, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2541,7 +2590,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2621,6 +2670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 428c74db0cb1bf14f8f13ed37b25440c, type: 3}
+      propertyPath: m_TagString
+      value: Playground_Toy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2649,7 +2702,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
