@@ -20,12 +20,7 @@ public class CharacterCreator : MonoBehaviour
 
     public void CreateRandom()
     {
-<<<<<<< HEAD
-
-=======
         CustomModularSet customSet = new CustomModularSet();   
         CharacterStats stats = new CharacterStats();
-        
->>>>>>> develop
     }
 }

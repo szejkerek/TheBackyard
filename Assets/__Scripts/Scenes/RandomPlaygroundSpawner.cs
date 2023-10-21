@@ -24,12 +24,6 @@ public class RandomPlaygroundSpawner : MonoBehaviour
                             Quaternion.Euler(new Vector3(0, Random.Range(1, 8)*45, 0)));
             
             g.transform.parent = transform;
-<<<<<<< HEAD
-
-            
-            //void OnCollisionEnter(g.GetComponent<Collider>());
-=======
->>>>>>> develop
             
         }
     }
