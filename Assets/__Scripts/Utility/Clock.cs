@@ -16,6 +16,11 @@ public class Clock
         startTimestamp = Time.time;
     }
 
+    public void ForwardClockBy(float seconds)
+    {
+        accumulatedTime += seconds;
+    }
+
     public void Start()
     {
         isActive = true;
