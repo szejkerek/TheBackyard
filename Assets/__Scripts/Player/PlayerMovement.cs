@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
-        hitCeiling = CheckForTopCollision(groundMask, groundCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
+        hitCeiling = CheckForTopCollision(groundMask, ceilingCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
         isOnDownSlope = PlayerOnDownSlope();
         isClimbingLadder = PlayerOnLadder();
 
@@ -77,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         playerVelocity.x = wishDir.x;
         playerVelocity.y += gravityForce * Time.deltaTime;
         playerVelocity.z = wishDir.z;
-
+        
         playerFlatVelocity = new Vector3(playerVelocity.x, 0.0f, playerVelocity.z);
 
         if(isOnDownSlope)
