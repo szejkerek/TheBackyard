@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4705295452375788075}
   - component: {fileID: 3005487749804746406}
   m_Layer: 0
-  m_Name: IzometricCamera
+  m_Name: IsometricCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,6 +12,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1494b75f360ca244bdae999369160e1, type: 3}
   m_Name: ModularDataSet
   m_EditorClassIdentifier: 
-  <Head>k__BackingField: []
-  <Body>k__BackingField: []
-  <Pants>k__BackingField: []
+  <SkinColor>k__BackingField:
+  - {r: 1, g: 0.9506003, b: 0.90943396, a: 1}
+  - {r: 0.9921569, g: 0.8980393, b: 0.8196079, a: 1}
+  - {r: 0.9433962, g: 0.8094113, b: 0.6977572, a: 1}
+  - {r: 0.8584906, g: 0.666815, b: 0.5134745, a: 1}
+  - {r: 0.7169812, g: 0.49250948, b: 0.31384832, a: 1}
+  - {r: 0.49056602, g: 0.3055173, b: 0.18697044, a: 1}
+  - {r: 0.2924528, g: 0.23254827, b: 0.18595585, a: 1}
+  <HairColor>k__BackingField:
+  - {r: 0.94018734, g: 0.9528302, b: 0.84855825, a: 1}
+  - {r: 0.8490566, g: 0.8343147, b: 0.6440014, a: 1}
+  - {r: 0.6320754, g: 0.48524517, b: 0.25283015, a: 1}
+  - {r: 0.5566038, g: 0.3234603, b: 0.20688856, a: 1}
+  - {r: 0.4056604, g: 0.23010498, b: 0.14695619, a: 1}
+  - {r: 0.26415092, g: 0.12692535, b: 0.058312554, a: 1}
+  - {r: 0.18867922, g: 0.18049125, b: 0.18049125, a: 1}
+  - {r: 0.7924528, g: 0.26083434, b: 0.13008183, a: 1}
+  - {r: 0.3490566, g: 0.23258315, b: 0.17584549, a: 1}
+  <ShoeColor>k__BackingField:
+  - {r: 0.62352943, g: 0.13725491, b: 0.121568635, a: 1}
+  - {r: 0.62352943, g: 0.121568635, b: 0.38431376, a: 1}
+  - {r: 0.54901963, g: 0.121568635, b: 0.62352943, a: 1}
+  - {r: 0.30588236, g: 0.121568635, b: 0.62352943, a: 1}
+  - {r: 0.121568635, g: 0.4431373, b: 0.62352943, a: 1}
+  - {r: 0.121568635, g: 0.62352943, b: 0.4156863, a: 1}
+  - {r: 0.18039216, g: 0.62352943, b: 0.121568635, a: 1}
+  - {r: 0.58431375, g: 0.62352943, b: 0.121568635, a: 1}
+  - {r: 0.7843138, g: 0.5254902, b: 0.121568635, a: 1}
+  - {r: 0.18823531, g: 0.18823531, b: 0.18823531, a: 1}
+  - {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  <Body>k__BackingField:
+  - {fileID: 21300000, guid: bb56d15ee67ab3c4aa463948ba2c8f46, type: 3}
+  - {fileID: 21300000, guid: 03692ac125edec04989de9ce5f410313, type: 3}
+  - {fileID: 21300000, guid: 15d3d092c5654ad408b8f5fdd17a6038, type: 3}
+  - {fileID: 21300000, guid: 2b2bda4963bf9c5438ef22f5cab072e3, type: 3}
+  - {fileID: 21300000, guid: cc7bd9dca445986449859410ff4ad823, type: 3}
+  <Hair>k__BackingField:
+  - {fileID: 21300000, guid: e80caabcdabc34549bda4f8431d260a5, type: 3}
+  - {fileID: 21300000, guid: 034b4f7fb1d39104c9fd0d5bf7932665, type: 3}
+  - {fileID: 21300000, guid: 9ba70867562272946b3738704b9e3497, type: 3}
+  - {fileID: 21300000, guid: 67d4b83a5c920a24bb3d3522c4f365a2, type: 3}
+  - {fileID: 21300000, guid: aaa916fe697640342a161a808c09f186, type: 3}
+  - {fileID: 21300000, guid: 8034c87a7cb1bfc4a8ef4eb9410c4fc4, type: 3}
+  <Brows>k__BackingField:
+  - {fileID: 21300000, guid: 543a02c4c59646841b3b757cb457d498, type: 3}
+  - {fileID: 21300000, guid: 78b781b7a34cd1d48904c086f6555644, type: 3}
+  - {fileID: 21300000, guid: 304ce35b4ac69814eba2f08d42af0bff, type: 3}
+  - {fileID: 21300000, guid: 68f87c6cc1ff91648a0f68b84790af07, type: 3}
+  - {fileID: 21300000, guid: c31d3de7a0e2bf7409692af05c37eb90, type: 3}
+  <Mouth>k__BackingField:
+  - {fileID: 21300000, guid: 15bd725a4c45c3a4a83582d4de5fcb44, type: 3}
+  - {fileID: 21300000, guid: b300904d65f159749b2b96d0376872b1, type: 3}
+  - {fileID: 21300000, guid: 6d83877747d32df448523aabf0f0e3ff, type: 3}
+  - {fileID: 21300000, guid: 164660f9054e56d41964a42c6ba39945, type: 3}
+  - {fileID: 21300000, guid: 354058938b173a64fa3d4df4d6e61468, type: 3}
+  - {fileID: 21300000, guid: 79f03a73b3706864b8e96ae7afd3de70, type: 3}
+  <Eyes>k__BackingField:
+  - {fileID: 21300000, guid: 34e7dedc388ceda4a962ddc5efbea85e, type: 3}
+  - {fileID: 21300000, guid: e4fb831b729fbaf4896ca2e8499a89ba, type: 3}
+  - {fileID: 21300000, guid: 518966b15f325da4e9ef253b5480f328, type: 3}
+  - {fileID: 21300000, guid: 7d9d790c9840ec04fbcfacd4a8e86e8d, type: 3}
+  - {fileID: 21300000, guid: 84d85ccd702b4fa42b183cf15a432f79, type: 3}
+  - {fileID: 21300000, guid: 5cb6afdcd4613b541a52d5aa09aa734b, type: 3}
+  - {fileID: 21300000, guid: b6b5b06286b57474c94711a72bfa9c9a, type: 3}
+  - {fileID: 21300000, guid: 9fb07cef588d08d42a33046b0399dd6a, type: 3}
+  <Nose>k__BackingField:
+  - {fileID: 21300000, guid: 5dcff6981b4ac324ba7166e787700a8b, type: 3}
+  - {fileID: 21300000, guid: 60c17f7dfaaf34b4d8b5a30724414261, type: 3}
+  - {fileID: 21300000, guid: e310be1ddb5e3c7419198f25240080bc, type: 3}
+  - {fileID: 21300000, guid: e60b40f444400ca4c9a36a41cc66aaed, type: 3}
+  - {fileID: 21300000, guid: d3c6f870b1691b245915fe9b3cccf9c9, type: 3}

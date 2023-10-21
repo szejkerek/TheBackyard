@@ -9,7 +9,7 @@ public class PlayableCharacter
 
     public PlayableCharacter(ModularDataSet mod)
     {
-        //PlayableCharacterModularSet.RandomizeSet(mod);
+        PlayableCharacterModularSet.RandomizeSet(mod);
     }
 }
 
