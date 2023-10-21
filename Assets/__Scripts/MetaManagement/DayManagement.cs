@@ -7,6 +7,7 @@ using UnityEngine;
 public class DayManagement : Singleton<DayManagement>
 {
     [SerializeField] int timePerDay = 12;
+
     [SerializeField] TMP_Text timeText;
 
     [SerializeField] TMP_InputField possibleWin;
@@ -24,7 +25,7 @@ public class DayManagement : Singleton<DayManagement>
         ArenaInformation info = GatherArenaInformatio();
         GameManager.Instance.SetArenaInformation(info);
 
-        SceneChangeManager.Instance.GoToScene(2);
+        SceneManager.Instance.LoadScene(2);
     }
 
     private ArenaInformation GatherArenaInformatio()

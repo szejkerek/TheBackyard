@@ -1,23 +1,36 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SceneChangeManager : Singleton<SceneChangeManager>
+public enum SceneEnum
+{
+    DayManagmentScene,
+    NightManagementScene,
+    DebugArena
+}
+
+
+public class SceneManager : Singleton<SceneManager>
 {
     public Action OnSceneChanged;
     [SerializeField] FadeScreen fadeScreen;
-    public void GoToScene(int sceneIndex)
+    public void LoadScene(int sceneIndex)
     {
-        StartCoroutine(GoToSceneRoutine(sceneIndex));
+        StartCoroutine(LoadSceneRoutine(sceneIndex));
     }
 
-    IEnumerator GoToSceneRoutine(int sceneIndex)
+    public void LoadScene(SceneEnum sceneEnum)
+    {
+        int sceneIndex = (int)sceneEnum;
+        LoadScene(sceneIndex);
+    }
+
+    IEnumerator LoadSceneRoutine(int sceneIndex)
     {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.FadeDuration);
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
         operation.allowSceneActivation = false;
 
         float timer = 0f;

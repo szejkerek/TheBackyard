@@ -38,13 +38,13 @@ public class DayNightCycleManager : Singleton<DayNightCycleManager>
         }
 
         currentDay++;
-        SceneChangeManager.Instance.GoToScene(0);
+        SceneManager.Instance.LoadScene(0);
     }
 
     void StartNight()
     {
         isDay = false;
-        SceneChangeManager.Instance.GoToScene(1);
+        SceneManager.Instance.LoadScene(1);
     }
 
 
