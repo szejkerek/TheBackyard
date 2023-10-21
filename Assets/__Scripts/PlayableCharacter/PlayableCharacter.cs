@@ -1,12 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class PlayableCharacter : MonoBehaviour
+[System.Serializable]
+public class PlayableCharacter
 {
     public CharacterStats stats = new CharacterStats();
+    public PlayableCharacterModularSet PlayableCharacterModularSet = new PlayableCharacterModularSet();
+
+    public PlayableCharacter(ModularDataSet mod)
+    {
+        PlayableCharacterModularSet.RandomizeSet(mod);
+    }
 }
 
 public class CharacterStats
