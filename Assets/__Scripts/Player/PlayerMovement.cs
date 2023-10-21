@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(isOnDownSlope)
         {
-            playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed;
+            playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed + Vector3.up * playerVelocity.y;
         }
 
         if(isClimbingLadder)
