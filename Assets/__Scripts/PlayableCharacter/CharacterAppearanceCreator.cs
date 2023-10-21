@@ -17,7 +17,7 @@ public class CharacterAppearanceCreator : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.G))
         {
-            GenerateCharacterAppearance(new CharacterInfo(modularDataSet).CustomModularSet);
+            GenerateCharacterAppearance(new CharacterInfo().customSet);
         }
     }
 

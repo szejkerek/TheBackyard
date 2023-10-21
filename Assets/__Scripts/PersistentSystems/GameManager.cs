@@ -12,9 +12,9 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        playableCharactersInfo.Add(new CharacterInfo(modularDataSet));
-        playableCharactersInfo.Add(new CharacterInfo(modularDataSet));
-        playableCharactersInfo.Add(new CharacterInfo(modularDataSet));
+        playableCharactersInfo.Add(new CharacterInfo());
+        playableCharactersInfo.Add(new CharacterInfo());
+        playableCharactersInfo.Add(new CharacterInfo());
     }
 
     public void SetArenaInformation(ArenaInformation arenaInformation)
