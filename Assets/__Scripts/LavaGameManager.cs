@@ -20,6 +20,12 @@ public class LavaGameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private RisingLava lavaPool;
     [SerializeField] private GameObject player;
+
+    [Space]
+    [Header("Heretic debug")]
+    [SerializeField] private string timeString;
+    [SerializeField] private float seconds;
+    [SerializeField] private float miliseconds;
     
     private PlayerMovement pm;
     private CameraTargetFollower ctf;
@@ -27,6 +33,8 @@ public class LavaGameManager : MonoBehaviour
     private int touchesSoFar = 0;
     private int sign = 1;
     private int currentStep = 0;
+
+    private Clock cock;
 
     private void Awake()
     {
@@ -36,6 +44,8 @@ public class LavaGameManager : MonoBehaviour
         }
 
         ctf = FindObjectOfType<CameraTargetFollower>();
+        cock = new();
+        cock.ForwardClockBy(121);
     }
 
     void Start()
@@ -52,7 +62,9 @@ public class LavaGameManager : MonoBehaviour
 
     void Update()
     {
-        
+        seconds = cock.GetElapsedTimeInSeconds();
+        miliseconds = cock.GetElapsedTimeInMiliseconds();
+        timeString = Clock.FormatToMinSec(cock);
     }
 
     void OnObjectLavaTrigger(GameObject collidedObject)
@@ -73,6 +85,7 @@ public class LavaGameManager : MonoBehaviour
             }
 
             lavaPool.OnLavaTrigger.RemoveListener(OnObjectLavaTrigger);
+            cock.Restart();
 
             return;
         }
@@ -94,6 +107,15 @@ public class LavaGameManager : MonoBehaviour
         lavaPool.UpwardsGrowthPerSecond = growthSteps[currentStep] * sign;
         lavaPool.Active = !lavaPool.Active;
         Invoke(nameof(CycleThroughLavaPoolState), intervalsBetweenSteps[currentStep]);
+
+        if(lavaPool.Active)
+        {
+            cock.Start();
+        }
+        else
+        {
+            cock.Stop();
+        }
 
         currentStep += sign;
 
