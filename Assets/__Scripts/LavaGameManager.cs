@@ -37,8 +37,6 @@ public class LavaGameManager : MonoBehaviour
     private int sign = 1;
     private int currentStep = 0;
 
-    private Clock cock;
-
     private void Awake()
     {
         if(player)
@@ -104,15 +102,6 @@ public class LavaGameManager : MonoBehaviour
         lavaPool.UpwardsGrowthPerSecond = growthSteps[currentStep] * sign;
         lavaPool.Active = !lavaPool.Active;
         Invoke(nameof(CycleThroughLavaPoolState), intervalsBetweenSteps[currentStep]);
-
-        if(lavaPool.Active)
-        {
-            cock.Start();
-        }
-        else
-        {
-            cock.Stop();
-        }
 
         currentStep += sign;
 
