@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,13 +34,27 @@ public class Clock
         Start();
     }
 
-    float GetElapsedTimeInSeconds()
+    public float GetElapsedTimeInSeconds()
     {
+        if(!isActive)
+        {
+            return accumulatedTime;
+        }
+
         return accumulatedTime + (Time.time - startTimestamp);
     }
 
-    float GetElapsedTimeInMiliseconds()
+    public float GetElapsedTimeInMiliseconds()
     {
         return GetElapsedTimeInSeconds() * 1000.0f;
+    }
+
+    public static string FormatToMinSec(Clock cock)
+    {
+        int seconds = (int)cock.GetElapsedTimeInSeconds();
+        int minutes = seconds / 60;
+        seconds %= 60;
+
+        return $"{minutes.ToString().PadLeft(2, '0')}:{seconds.ToString().PadLeft(2, '0')}";
     }
 }
