@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpCooldown = 0.2f;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
 
-    public float JumpHeight => jumpHeight; 
+    public float JumpHeight => jumpHeight;
 
     [Tooltip("Distance for which ground layer is checked for")]
     [SerializeField] private float groundCastCheckDistance = 0.1f;
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Masks")]
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask ladderMask;
 
     [Space]
     [Header("Visible internal variables (do not change)")]
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool hitCeiling;
     [SerializeField] private bool isOnDownSlope;
+    [SerializeField] private bool isClimbingLadder;
     [SerializeField] private Vector3 groundNormal;
 
     private CharacterController controller;
@@ -50,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = CheckForGroundCollision();
         hitCeiling = CheckForCeilingCollision();
         isOnDownSlope = PlayerOnDownSlope();
+        isClimbingLadder = PlayerOnLadder();
 
         Vector3 forwardMovement = forward * Input.GetAxisRaw("Vertical");
         Vector3 rightMovement = right * Input.GetAxisRaw("Horizontal");
@@ -90,6 +93,12 @@ public class PlayerMovement : MonoBehaviour
         groundNormal = rayHit.normal;
 
         return angle > 0.0f && angle < controller.slopeLimit && Vector3.Dot(groundNormal, playerFlatVelocity) > 0.0f;
+    }
+
+    private bool PlayerOnLadder()
+    {
+        return true;
+        // bool isTouchingLadder = Physics.SphereCast(transform.position + Vector3.down, 0.2f);
     }
 
     private void CorrectForSlopes()
