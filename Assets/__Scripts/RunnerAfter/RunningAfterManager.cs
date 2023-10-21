@@ -7,6 +7,7 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
 {
     [SerializeField] private List<RunnerAfter> runners;
     private RunnerAfter currentRunnerAfter;
+    public RunnerAfter previousRunnerAfter = null;
 
     [SerializeField] private float gameTime = 120f;
     private float currentTime = 120f;
@@ -15,10 +16,13 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
 
     public void UpdateRunnerAfter(RunnerAfter currentRunner)
     {
+        previousRunnerAfter = currentRunnerAfter;
+        if(previousRunnerAfter != null) Debug.Log(previousRunnerAfter.gameObject.name);
         currentRunnerAfter = currentRunner;
         foreach (var runner in runners)
         {
             runner.currentRunnerAfter = currentRunner;
+            runner.previousRunnerAfter = previousRunnerAfter;
             runner.taggingTimer = 0;
         }
     }
