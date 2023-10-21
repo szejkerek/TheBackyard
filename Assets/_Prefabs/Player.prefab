@@ -175,7 +175,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db10c72809c7d674bbbf37a88138e3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  movementSpeed: 5
   jumpHeight: 2
-  jumpCooldown: 0.28
-  groundRaycastDistance: 1.05
+  gravityForce: -30
+  jumpCooldown: 0.2
+  jumpKey: 32
+  groundCastCheckDistance: 0.1
+  ceilingCastCheckDistance: 0.1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  playerVelocity: {x: 0, y: 0, z: 0}
+  playerFlatVelocity: {x: 0, y: 0, z: 0}
+  playerSpeed: 5
+  isGrounded: 0
+  hitCeiling: 0
+  isOnDownSlope: 0
+  groundNormal: {x: 0, y: 0, z: 0}
