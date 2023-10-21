@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Clock
@@ -49,14 +46,14 @@ public class Clock
         return accumulatedTime + (Time.time - startTimestamp);
     }
 
-    public float GetElapsedTimeInMiliseconds()
+    public float GetElapsedTimeInMilliseconds()
     {
         return GetElapsedTimeInSeconds() * 1000.0f;
     }
 
-    public static string FormatToMinSec(Clock cock)
+    public static string FormatToMinSec(int milliseconds)
     {
-        int seconds = (int)cock.GetElapsedTimeInSeconds();
+        int seconds = milliseconds / 1000;
         int minutes = seconds / 60;
         seconds %= 60;
 
