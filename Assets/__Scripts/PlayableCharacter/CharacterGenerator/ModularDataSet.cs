@@ -10,6 +10,7 @@ public class ModularDataSet : ScriptableObject
     [field: SerializeField] public List<GameObject> Pants { private set; get; }
 }
 
+[System.Serializable]
 public class PlayableCharacterModularSet
 {
     public GameObject Head;

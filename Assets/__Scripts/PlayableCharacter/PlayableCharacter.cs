@@ -9,10 +9,11 @@ public class PlayableCharacter
 
     public PlayableCharacter(ModularDataSet mod)
     {
-        PlayableCharacterModularSet.RandomizeSet(mod);
+        //PlayableCharacterModularSet.RandomizeSet(mod);
     }
 }
 
+[System.Serializable]
 public class CharacterStats
 {
     public float stamina = 5;
