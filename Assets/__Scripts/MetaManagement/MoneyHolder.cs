@@ -3,6 +3,7 @@ using System;
 public class MoneyHolder
 {
     public Action OnMoneyChange;
+    public Action OnNoMoneyLeft;
 
     int startMoneyMin;
     int startMoneyMax;
@@ -41,7 +42,11 @@ public class MoneyHolder
             amount = 0;
         }
         money -= amount;
-        if(money < 0) money = 0;
+        if (money < 0)
+        {
+            money = 0;
+            OnNoMoneyLeft?.Invoke();
+        }
         OnMoneyChange?.Invoke();
     }
 }

@@ -1,4 +1,3 @@
-
 using TMPro;
 using UnityEngine;
 
@@ -19,9 +18,13 @@ public class DayManagement : Singleton<DayManagement>
 
     public void GoIntoArena() 
     {
+        int hoursLeft = MetaGameplayManager.Instance.CycleManager.HoursLeft;
         ArenaInformation info = GatherArenaInformatio();
+        if(info.timeLoss >= hoursLeft)
+        {
+            Debug.LogWarning($"Cannot Go to this arena with {hoursLeft} hours left");
+        }
         GameManager.Instance.SetArenaInformation(info);
-
         SceneManager.Instance.LoadScene(2);
     }
 
