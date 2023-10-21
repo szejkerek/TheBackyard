@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isClimbingLadder;
     [SerializeField] private Vector3 groundNormal;
 
+    public Vector3 Velocity => playerVelocity;
+    public Vector3 FlatVelocity => playerFlatVelocity;
+
     private CharacterController controller;
     private Vector3 forward;
     private Vector3 right;
@@ -82,6 +85,11 @@ public class PlayerMovement : MonoBehaviour
 
         playerSpeed = playerVelocity.magnitude;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    public void JumpWithHeight(float targetHeight)
+    {
+        playerVelocity.y = Mathf.Sqrt(targetHeight * -3.0f * gravityForce);
     }
 
     private bool PlayerOnDownSlope()
