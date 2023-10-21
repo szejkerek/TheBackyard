@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,7 +13,7 @@ public class LavaGameManager : MonoBehaviour
     public UnityEvent playerLostEvent;
 
     [Header("Regular state")]
-    [SerializeField] private int[] growthSteps = { 1, 1, 2, 2, 3, 3 };
+    [SerializeField] private float[] growthSteps = { 1, 1, 2, 2, 3, 3 };
     [SerializeField] private int[] intervalsBetweenSteps = { 2, 2, 3, 3, 4, 4 };
 
     [Space]
