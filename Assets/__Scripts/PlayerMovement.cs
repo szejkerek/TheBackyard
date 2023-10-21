@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpCooldown = 0.2f;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
 
+    public float JumpHeight => jumpHeight; 
+
     [Tooltip("Distance for which ground layer is checked for")]
     [SerializeField] private float groundCastCheckDistance = 0.1f;
 
