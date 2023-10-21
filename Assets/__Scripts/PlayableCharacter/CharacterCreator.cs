@@ -20,7 +20,10 @@ public class CharacterCreator : MonoBehaviour
 
     public void CreateRandom()
     {
-        CustomModularSet customSet = new CustomModularSet();   
+        CustomModularSet customSet = characterAppearanceCreator.RandomizeSet();   
         CharacterStats stats = new CharacterStats();
+        stats.RandomizeStats();
+        CharacterInfo characterInfo = new CharacterInfo(stats, customSet);
+        this.characterInfo = characterInfo;
     }
 }
