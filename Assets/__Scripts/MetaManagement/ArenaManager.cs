@@ -35,10 +35,11 @@ public class ArenaManager : Singleton<ArenaManager>
 
     private ArenaInformation DebugArenaInfo()
     {
+        Debug.Log("Generating debug arena info");
         ArenaInformation info = new ArenaInformation();
-        info.moneyWin = 20;
-        info.moneyLoss = 5;
-        info.timeLoss = 5;
+        info.moneyWin = 0;
+        info.moneyLoss = 0;
+        info.timeLoss = 0;
         return info;
     }
 }

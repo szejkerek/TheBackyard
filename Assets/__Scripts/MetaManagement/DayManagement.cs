@@ -23,6 +23,7 @@ public class DayManagement : Singleton<DayManagement>
         if(info.timeLoss >= hoursLeft)
         {
             Debug.LogWarning($"Cannot Go to this arena with {hoursLeft} hours left");
+            return;
         }
         GameManager.Instance.SetArenaInformation(info);
         SceneManager.Instance.LoadScene(2);
