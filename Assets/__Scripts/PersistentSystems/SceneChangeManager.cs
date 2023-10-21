@@ -1,26 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChangeManager : Singleton<SceneChangeManager>
 {
+    public Action OnSceneChanged;
     [SerializeField] FadeScreen fadeScreen;
-
-    private void Update()
-    {
-
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            GoToScene(1);
-        }
-
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            GoToScene(0);
-        }
-
-    }
-
     public void GoToScene(int sceneIndex)
     {
         StartCoroutine(GoToSceneRoutine(sceneIndex));
@@ -40,6 +26,7 @@ public class SceneChangeManager : Singleton<SceneChangeManager>
             timer += Time.deltaTime;
             yield return null;
         }
+        OnSceneChanged?.Invoke();
         operation.allowSceneActivation = true;
         fadeScreen.FadeIn();
     }

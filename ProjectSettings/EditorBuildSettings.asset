@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MetaManagementScene.unity
+    path: Assets/Scenes/MetaManagement/DayManagementScene.unity
     guid: 42acd2f2ce98e414bbc708868ccd069a
   - enabled: 1
-    path: Assets/Scenes/Graphiccs.unity
-    guid: 761941d23c684be42b141f509268f9f1
+    path: Assets/Scenes/MetaManagement/NightManagementScene.unity
+    guid: d8dfe4cd8c3169441bbb7f967f23ee8e
+  - enabled: 1
+    path: Assets/Scenes/MetaManagement/ArenaManagementScene.unity
+    guid: d7cd0f81105438c4793da6f518c14915
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: be0b3cdee5d899e4683e4b0675a94f80, type: 2}

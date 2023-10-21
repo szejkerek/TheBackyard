@@ -11,10 +11,10 @@ public class MetaGameplayManager : MonoBehaviour
     private void Start()
     {
         MoneyManager.Instance.OnMoneyChange += UpdateMoneyDisplay;
-        DayNightCycleManager.Instance.OnNewCycle += UpdateDayDisplay;
+        SceneChangeManager.Instance.OnSceneChanged += UpdateDayDisplay;
         DayNightCycleManager.Instance.OnCycleEnded += EndGame;
-
-        DayNightCycleManager.Instance.GoToNextCycle();
+        UpdateDayDisplay();
+        UpdateMoneyDisplay();
     }
 
     private void EndGame()

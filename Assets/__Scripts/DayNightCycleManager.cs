@@ -8,8 +8,6 @@ public class DayNightCycleManager : Singleton<DayNightCycleManager>
     public Action OnCycleEnded;
 
     public Action OnNewCycle;
-    public Action OnStartDay;
-    public Action OnStartNight;
     public Action OnNextDay;
     public int CurrentDay => currentDay;
     int currentDay = 0;
@@ -17,8 +15,7 @@ public class DayNightCycleManager : Singleton<DayNightCycleManager>
     [SerializeField] private int LimitDays = 14;
 
     public void GoToNextCycle()
-    {
-        OnNewCycle?.Invoke();
+    {   
         if (!isDay)
         {
             StartDay();
@@ -27,14 +24,7 @@ public class DayNightCycleManager : Singleton<DayNightCycleManager>
         {
             StartNight();
         }
-
-
-    }
-
-    void StartNight()
-    {
-        isDay = false;
-        OnStartNight?.Invoke();
+        OnNewCycle?.Invoke();
     }
 
     private void StartDay()
@@ -48,6 +38,14 @@ public class DayNightCycleManager : Singleton<DayNightCycleManager>
         }
 
         currentDay++;
-        OnStartDay?.Invoke();
+        SceneChangeManager.Instance.GoToScene(0);
     }
+
+    void StartNight()
+    {
+        isDay = false;
+        SceneChangeManager.Instance.GoToScene(1);
+    }
+
+
 }
