@@ -7617,6 +7617,10 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3005487749804746406, guid: a1428afc211671b42a888650044b0ce4, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4705295452375788075, guid: a1428afc211671b42a888650044b0ce4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.289732
@@ -7677,10 +7681,7 @@ PrefabInstance:
     - {fileID: 6060320477267176831, guid: a1428afc211671b42a888650044b0ce4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6217781914117742942, guid: a1428afc211671b42a888650044b0ce4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2074721032}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1428afc211671b42a888650044b0ce4, type: 3}
 --- !u!1 &1150240221
 GameObject:
@@ -13195,26 +13196,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059556548}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2074721030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6217781914117742942, guid: a1428afc211671b42a888650044b0ce4, type: 3}
-  m_PrefabInstance: {fileID: 1149994845}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2074721032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074721030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce64d3f7ec42bb04db24182521884604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 1332554653}
-  targetTarnsform: {fileID: 0}
-  viewOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2083708583
 GameObject:
   m_ObjectHideFlags: 0
