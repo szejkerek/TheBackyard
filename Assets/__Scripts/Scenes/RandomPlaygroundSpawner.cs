@@ -26,7 +26,7 @@ public class RandomPlaygroundSpawner : MonoBehaviour
             g.transform.parent = transform;
 
             
-            void OnCollisionEnter(g.GetComponent<Collider>());
+            //void OnCollisionEnter(g.GetComponent<Collider>());
             
         }
     }
