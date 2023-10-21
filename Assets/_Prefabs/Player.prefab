@@ -150,8 +150,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.35
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6569895839727669342
@@ -200,8 +200,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.7
-  m_Radius: 0.5
+  m_Height: 1
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -238,12 +238,13 @@ MonoBehaviour:
   jumpKey: 32
   groundCastCheckDistance: 0.1
   ceilingCastCheckDistance: 0.1
+  ladderCastCheckDistance: 0.2
   groundMask:
     serializedVersion: 2
     m_Bits: 256
   ladderMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   playerVelocity: {x: 0, y: 0, z: 0}
   playerFlatVelocity: {x: 0, y: 0, z: 0}
   playerSpeed: 5
@@ -252,6 +253,7 @@ MonoBehaviour:
   isOnDownSlope: 0
   isClimbingLadder: 0
   groundNormal: {x: 0, y: 0, z: 0}
+  ladderNormal: {x: 0, y: 0, z: 0}
 --- !u!95 &2276366870822309841
 Animator:
   serializedVersion: 5

@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Distance for which ground (ceiling) layer is checked for")]
     [SerializeField] private float ceilingCastCheckDistance = 0.1f;
 
+    [Tooltip("Distance for which ladder layer is checked for")]
+    [SerializeField] private float ladderCastCheckDistance = 0.2f;
+
     [Space]
     [Header("Masks")]
     [SerializeField] private LayerMask groundMask;
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isOnDownSlope;
     [SerializeField] private bool isClimbingLadder;
     [SerializeField] private Vector3 groundNormal;
+    [SerializeField] private Vector3 ladderNormal;
 
     public Vector3 Velocity => playerVelocity;
     public Vector3 FlatVelocity => playerFlatVelocity;
@@ -52,8 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = CheckForGroundCollision();
-        hitCeiling = CheckForCeilingCollision();
+        isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
+        hitCeiling = CheckForTopCollision(groundMask, ceilingCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
         isOnDownSlope = PlayerOnDownSlope();
         isClimbingLadder = PlayerOnLadder();
 
@@ -75,12 +81,17 @@ public class PlayerMovement : MonoBehaviour
         playerVelocity.x = wishDir.x;
         playerVelocity.y += gravityForce * Time.deltaTime;
         playerVelocity.z = wishDir.z;
-
+        
         playerFlatVelocity = new Vector3(playerVelocity.x, 0.0f, playerVelocity.z);
 
         if(isOnDownSlope)
         {
-            CorrectForSlopes();
+            playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed + Vector3.up * playerVelocity.y;
+        }
+
+        if(isClimbingLadder)
+        {
+            CorrectLadderMovement();
         }
 
         playerSpeed = playerVelocity.magnitude;
@@ -105,30 +116,37 @@ public class PlayerMovement : MonoBehaviour
 
     private bool PlayerOnLadder()
     {
-        return true;
-        // bool isTouchingLadder = Physics.SphereCast(transform.position + Vector3.down, 0.2f);
+        bool isTouchingLadder = Physics.SphereCast(transform.position + Vector3.down, 0.5f, playerFlatVelocity, out RaycastHit rayHit, 0.5f, ladderMask);
+        
+        if(!isTouchingLadder)
+        {
+            return false;
+        }
+
+        return Vector3.Dot(playerFlatVelocity, rayHit.normal) < 0.0f;
     }
 
-    private void CorrectForSlopes()
+    private void CorrectLadderMovement()
     {
-        playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed;
+        if(Vector3.Dot(ladderNormal, Vector3.up) == 0.0f)
+        {
+            playerVelocity = Vector3.up * movementSpeed;
+
+            return;
+        }
     }
 
-    private bool CheckForGroundCollision()
+    private bool CheckForBottomCollision(LayerMask mask, float distance)
     {
-        return Physics.CheckSphere(transform.position + Vector3.down, groundCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.down + Vector3.right, groundCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.down + Vector3.left, groundCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.down + Vector3.back, groundCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.down + Vector3.forward, groundCastCheckDistance, groundMask);
+        return Physics.CheckSphere(transform.position + Vector3.down, distance, mask) ||
+            Physics.CheckSphere(transform.position + Vector3.down + Vector3.right / 2.0f, distance, mask) ||
+            Physics.CheckSphere(transform.position + Vector3.down + Vector3.left / 2.0f, distance, mask) ||
+            Physics.CheckSphere(transform.position + Vector3.down + Vector3.back / 2.0f, distance, mask) ||
+            Physics.CheckSphere(transform.position + Vector3.down + Vector3.forward / 2.0f, distance, mask);
     }
 
-    private bool CheckForCeilingCollision()
+    private bool CheckForTopCollision(LayerMask mask, float distance)
     {
-        return Physics.CheckSphere(transform.position + Vector3.up, ceilingCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.up + Vector3.right, ceilingCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.up + Vector3.left, ceilingCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.up + Vector3.back, ceilingCastCheckDistance, groundMask) ||
-            Physics.CheckSphere(transform.position + Vector3.up + Vector3.forward, ceilingCastCheckDistance, groundMask);
+        return Physics.CheckSphere(transform.position + Vector3.up, distance, mask);
     }
 }

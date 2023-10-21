@@ -4,12 +4,20 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterInfo
 {
-    public CharacterStats stats = new CharacterStats();
-    public CustomModularSet CustomModularSet = new CustomModularSet();
+    public CharacterStats stats;
+    public CustomModularSet customSet;
 
-    public CharacterInfo(ModularDataSet mod)
+    public CharacterInfo(CharacterStats stats, CustomModularSet customSet)
     {
-        CustomModularSet.RandomizeSet(mod);
+        this.stats = stats;
+        this.customSet = customSet;
+    }
+
+    public CharacterInfo()
+    {
+        stats = new CharacterStats();
+        customSet = new CustomModularSet();
+
     }
 }
 
@@ -20,6 +28,6 @@ public class CharacterStats
 
     public void RandomizeStats()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 }
