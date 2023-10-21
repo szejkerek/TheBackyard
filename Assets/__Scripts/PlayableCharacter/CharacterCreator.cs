@@ -9,8 +9,17 @@ public class CharacterCreator : MonoBehaviour
 
     private void Awake()
     {
-        characterAppearanceCreator.GetComponentInChildren<CharacterAppearanceCreator>();
+        characterAppearanceCreator = GetComponentInChildren<CharacterAppearanceCreator>();
     }
 
+    public void Create(CharacterInfo characterInfo)
+    {
+        this.characterInfo = characterInfo;
+        characterAppearanceCreator.GenerateCharacterAppearance(characterInfo.customSet);
+    }
 
+    public void CreateRandom()
+    {
+
+    }
 }
