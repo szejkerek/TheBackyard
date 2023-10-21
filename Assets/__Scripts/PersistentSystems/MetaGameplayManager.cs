@@ -28,10 +28,10 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
         moneyHolder = new MoneyHolder(startMoneyMin, startMoneyMax);
         cycleManager = new CycleManager(limitDays, timePerDay);
 
-        moneyHolder.OnMoneyChange += UpdateMoneyDisplay;
         cycleManager.OnCycleEnded += EndGame;
 
         SceneManager.Instance.OnSceneChanged += UpdateDayDisplay;
+        SceneManager.Instance.OnSceneChanged += UpdateMoneyDisplay;
         
         UpdateDayDisplay();
         UpdateMoneyDisplay();
