@@ -5,25 +5,26 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] ModularDataSet modularDataSet;
-    [SerializeField] List<CharacterInfo> playableCharactersInfo;
+
+    public List<CharacterInfo> PlayableCharacters => playableCharacters;
+    [SerializeField] List<CharacterInfo> playableCharacters;
 
     public ArenaInformation ArenaInformation => arenaInformation;
     ArenaInformation arenaInformation;
 
     private void Start()
     {
-        playableCharactersInfo.Add(new CharacterInfo());
-        playableCharactersInfo.Add(new CharacterInfo());
-        playableCharactersInfo.Add(new CharacterInfo());
+        for (int i = 0; i < 3; i++)
+        {
+            CharacterInfo info = new CharacterInfo();
+            info.stats.RandomizeStats();
+            info.customSet.RandomizeSet(modularDataSet);
+            playableCharacters.Add(info);
+        }
     }
 
     public void SetArenaInformation(ArenaInformation arenaInformation)
     {
         this.arenaInformation = arenaInformation;
-    }
-
-    public void ClearArenaInformation()
-    {
-        this.arenaInformation = null;
     }
 }

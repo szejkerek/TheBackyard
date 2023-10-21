@@ -28,6 +28,6 @@ public class CharacterStats
 
     public void RandomizeStats()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 }

@@ -3,11 +3,11 @@ using UnityEngine;
 public class CameraTargetFollower : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private Vector3 offset;
+
     private PlayerMovement playerMovement;
-
-    public Vector3 initOffset;
-
     private bool validTarget = true;
+    private Vector3 initOffset;
 
     private void Awake()
     {
@@ -23,13 +23,13 @@ public class CameraTargetFollower : MonoBehaviour
         if (!validTarget) return;
 
         initOffset = transform.position;
-        transform.position = playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight;
+        transform.position = playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight + offset;
     }
 
     void LateUpdate()
     {
         if (!validTarget) return;
 
-        transform.position = Vector3.Lerp(transform.position, playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight, speed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight + offset, speed * Time.deltaTime);
     }
 }

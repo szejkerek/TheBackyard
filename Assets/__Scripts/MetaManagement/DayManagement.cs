@@ -16,7 +16,7 @@ public class DayManagement : Singleton<DayManagement>
         timeText.text = $"Time left: {cycleManager.HoursLeft}h";
     }
 
-    public void GoIntoArena() 
+    public void GoIntoArena(int characterIndex) 
     {
         int hoursLeft = MetaGameplayManager.Instance.CycleManager.HoursLeft;
         ArenaInformation info = GatherArenaInformatio();
@@ -25,6 +25,7 @@ public class DayManagement : Singleton<DayManagement>
             Debug.LogWarning($"Cannot Go to this arena with {hoursLeft} hours left");
             return;
         }
+        info.character = GameManager.Instance.PlayableCharacters[characterIndex];
         GameManager.Instance.SetArenaInformation(info);
         SceneManager.Instance.LoadScene(2);
     }
