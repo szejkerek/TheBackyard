@@ -5,6 +5,7 @@ using UnityEngine;
 public enum SceneEnum
 {
     MainMenu,
+    Credits,
     CharacterSelection,
     DayManagmentScene,
     NightManagementScene,
