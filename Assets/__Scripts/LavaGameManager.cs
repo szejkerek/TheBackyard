@@ -190,7 +190,7 @@ public class LavaGameManager : MonoBehaviour
 
         timerText.text = "You Lost";
         timerText.color = Color.red;
-        Debug.Log("Player lost :OOOO");
+        Debug.Log("Player lost");
     }
     void DisplayTime(float timeToDisplay)
     {

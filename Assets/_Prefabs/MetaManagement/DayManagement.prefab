@@ -987,8 +987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 6425295374959314564}
-  minigamePicker: {fileID: 0}
-  characterPicker: {fileID: 0}
+  minigamePicker: {fileID: 2093633477500601725}
+  characterPicker: {fileID: 5178588426182314595}
 --- !u!1 &8052476260717894537
 GameObject:
   m_ObjectHideFlags: 0

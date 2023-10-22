@@ -27,7 +27,7 @@ public class DayManagement : Singleton<DayManagement>
         }
         arenaInformation.character = GameManager.Instance.PlayableCharacters[characterIndex];
         GameManager.Instance.SetArenaInformation(arenaInformation);
-        SceneManager.Instance.LoadScene(2);
+        SceneManager.Instance.LoadScene(arenaInformation.sceneIndex);
     }
 
     public void SetArenaInformation(ArenaInformation newArenaInformation)

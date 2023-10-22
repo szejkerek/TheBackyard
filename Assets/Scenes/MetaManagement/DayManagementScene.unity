@@ -241,11 +241,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &754131099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178588426182314595, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
-  m_PrefabInstance: {fileID: 6431531214319810591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314328319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,11 +366,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1789466101 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2093633477500601725, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
-  m_PrefabInstance: {fileID: 6431531214319810591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6431531214319810591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -388,14 +378,6 @@ PrefabInstance:
       propertyPath: minigame
       value: 
       objectReference: {fileID: 11400000, guid: b39a649c0af6cdc4892082f4d29c39e0, type: 2}
-    - target: {fileID: 3666166245374181145, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
-      propertyPath: minigamePicker
-      value: 
-      objectReference: {fileID: 1789466101}
-    - target: {fileID: 3666166245374181145, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
-      propertyPath: characterPicker
-      value: 
-      objectReference: {fileID: 754131099}
     - target: {fileID: 6725878863302560261, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
       propertyPath: m_LocalPosition.x
       value: 277.43423
