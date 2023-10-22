@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterCreator : MonoBehaviour
 {
+    public CharacterInfo CharacterInfo => characterInfo;
     CharacterInfo characterInfo;
     CharacterAppearanceCreator characterAppearanceCreator;
 
