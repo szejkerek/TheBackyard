@@ -13,9 +13,9 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
     [SerializeField] private int timePerDay;
 
     [Header("UI")]
+    [SerializeField] GameObject persistenUI;
     [SerializeField] TMP_Text moneyText;
     [SerializeField] TMP_Text dayText;
-    [SerializeField] TMP_Text endGame;
 
     public MoneyHolder MoneyHolder => moneyHolder;
     private MoneyHolder moneyHolder;
@@ -25,7 +25,6 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
 
     private void Start()
     {
-
         moneyHolder = new MoneyHolder(startMoneyMin, startMoneyMax);
         cycleManager = new CycleManager(limitDays, timePerDay);
 
@@ -38,10 +37,14 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
         UpdateMoneyDisplay();
     }
 
+    public void SetActivePersistentUI(bool active)
+    {
+        persistenUI.SetActive(active);
+    }
 
     private void EndGame()
     {
-        endGame.gameObject.SetActive(true);
+        
     }
 
     public void NextCycle()
