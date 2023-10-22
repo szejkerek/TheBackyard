@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9aff692032a967b49bfb29de30c14625
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: e64a4742f5ab2664dbb048171cb3f3fb
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelection.unity
+    guid: 0024e490961938a4690ffc5f192c7f8b
+  - enabled: 1
     path: Assets/Scenes/MetaManagement/DayManagementScene.unity
     guid: 42acd2f2ce98e414bbc708868ccd069a
   - enabled: 1
@@ -15,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/FloorIsLava.unity
     guid: ba6acd8103381ae4393d229902fb826d
   - enabled: 1
-    path: Assets/Scenes/MetaManagement/ArenaManagementScene.unity
-    guid: 99ee5f53c9518834c9e3d8bf7df7ef7a
+    path: Assets/Scenes/Minigames/Berek.unity
+    guid: 8e34822895954434b925db1a57239b3a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: be0b3cdee5d899e4683e4b0675a94f80, type: 2}

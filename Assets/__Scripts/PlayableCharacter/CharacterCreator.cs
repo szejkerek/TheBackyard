@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class CharacterCreator : MonoBehaviour
 {
+    [SerializeField] bool setAsPlayable = false;
+    [SerializeField] int playableIndex;
+
+    public CharacterInfo CharacterInfo => characterInfo;
     CharacterInfo characterInfo;
     CharacterAppearanceCreator characterAppearanceCreator;
 
-    private void Start()
+    private void Awake()
     {
         characterAppearanceCreator = GetComponentInChildren<CharacterAppearanceCreator>();
+
+        if(setAsPlayable)
+        {
+            Create(GameManager.Instance.PlayableCharacters[playableIndex]);
+        }
     }
 
     public void Create(CharacterInfo characterInfo)

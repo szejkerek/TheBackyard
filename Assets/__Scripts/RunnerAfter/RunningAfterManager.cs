@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RunningAfterManager : Singleton<RunningAfterManager>
 {
+    [SerializeField] ArenaManager arena;
     [SerializeField] private List<RunnerAfter> runners;
     private RunnerAfter currentRunnerAfter;
     public RunnerAfter previousRunnerAfter = null;
@@ -16,6 +17,8 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
 
     public void UpdateRunnerAfter(RunnerAfter currentRunner)
     {
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Click2);
+
         previousRunnerAfter = currentRunnerAfter;
         if(previousRunnerAfter != null) Debug.Log(previousRunnerAfter.gameObject.name);
         currentRunnerAfter = currentRunner;
@@ -39,18 +42,37 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
             runner.runners = runners;
             runner.currentRunnerAfter = runners[randomRunnerIndex];
         }
+
+        AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.PlayTag);
     }
 
     public bool GameWon()
     {
+        AudioManager.Instance.StopGlobalSound();
+        //AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
         return !(RunnerAfterPlayer)currentRunnerAfter;
     }
-
+    bool winOnce = false;
     private void Update()
     {
         if(currentTime <= 0)
         {
+            if (winOnce)
+                return;
+
             var gameWon = GameWon();
+            if(gameWon)
+            {
+                AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
+                arena.WinArena();
+            }
+            else
+            {
+                AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Lose);
+                arena.LoseArena();
+            }
+            winOnce = true;
+
             return;
         }
         currentTime -= Time.deltaTime;

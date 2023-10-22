@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd66e33cfe95cd44caee6a51a73a2009, type: 3}
+  m_Name: MusicLib
+  m_EditorClassIdentifier: 
+  <Credits>k__BackingField: {fileID: 8300000, guid: c9319e329d215fb42bbb7c137c17dba1, type: 3}
+  <MenuKids>k__BackingField: {fileID: 8300000, guid: ee63c32d9481dc944b0fa41dac6a828d, type: 3}
+  <MenuNoKids>k__BackingField: {fileID: 8300000, guid: 5f47ca6d9cd12b141b090092c91d7005, type: 3}
+  <PlayTag>k__BackingField: {fileID: 8300000, guid: e4ece78249e8efb49bb936dfa2195428, type: 3}
+  <FloorIsLava>k__BackingField: {fileID: 8300000, guid: 9b4f9880aabc32d448a3c38a0fd461ed, type: 3}

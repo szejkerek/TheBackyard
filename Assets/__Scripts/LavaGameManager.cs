@@ -73,6 +73,7 @@ public class LavaGameManager : MonoBehaviour
     private void Start()
     {
         timerIsRunning = true;
+        AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.FloorIsLava);
     }
 
     void Update()
@@ -133,12 +134,12 @@ public class LavaGameManager : MonoBehaviour
         }
 
         pm.JumpWithHeight(touchUpwardsFroce);
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleOnce);
         touchesSoFar++;
     }
 
     void SuddenDeath()
     {
-        timerText.text = "You Lost, it was sudden";
         timerText.color = Color.red;
         CancelInvoke();
 
@@ -169,9 +170,10 @@ public class LavaGameManager : MonoBehaviour
         playerWonEvent?.Invoke();
         CancelInvoke();
 
-        timerText.text = "You Won!";
         timerText.color = Color.green;
         Debug.Log("Player won");
+        AudioManager.Instance.StopGlobalSound();
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
     }
 
     private void OnPlayerLost()
@@ -189,9 +191,11 @@ public class LavaGameManager : MonoBehaviour
         playerLostEvent?.Invoke();
         winTimer.Stop();
 
-        timerText.text = "You Lost";
         timerText.color = Color.red;
         Debug.Log("Player lost");
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleLong);
+        AudioManager.Instance.StopGlobalSound();
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Lose);
     }
     void DisplayTime(float timeToDisplay)
     {

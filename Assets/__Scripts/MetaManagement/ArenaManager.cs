@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArenaManager : Singleton<ArenaManager>
@@ -12,7 +16,21 @@ public class ArenaManager : Singleton<ArenaManager>
             Debug.LogError("Couldn't get arena information!");
             currentInfo = DebugArenaInfo();
         }
-        Debug.Log(currentInfo.character);
+
+        AssignCharactersAttributes();
+
+    }
+
+    private void AssignCharactersAttributes()
+    {
+        List<CharacterCreator> characterList = FindObjectsOfType<CharacterCreator>().ToList();
+        foreach (CharacterCreator character in characterList)
+        {
+            character.CreateRandom();
+        }
+
+        CharacterCreator player = FindObjectOfType<PlayerMovement>().GetComponent<CharacterCreator>();
+        player.Create(currentInfo.character);
     }
 
     public void WinArena()

@@ -15,24 +15,10 @@ public class ProjectImagination : MonoBehaviour
         Imagination = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeState(bool imaginaryVersion)
     {
-        if (Input.GetKeyDown("i") && Imagination==true)
-        {
-            Debug.Log("imag");
-            RealObject.SetActive(true);
-            ImaginaryObject.SetActive(false);
-            Imagination = false;
-        }
-        else if (Input.GetKeyDown("i") && Imagination==false)
-        {
-            Debug.Log("imag2");
-            RealObject.SetActive(false);
-            ImaginaryObject.SetActive(true);
-            Imagination = true;
-        }
-
-
+        RealObject.SetActive(!imaginaryVersion);
+        ImaginaryObject.SetActive(imaginaryVersion);
+        Imagination = !imaginaryVersion;
     }
 }
