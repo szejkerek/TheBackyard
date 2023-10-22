@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FloorIsLava
   m_EditorClassIdentifier: 
   <SceneEnum>k__BackingField: 5
-  <Preview>k__BackingField: {fileID: 21300000, guid: e8a42a33e283b9b48b7f5aee2cbd16a9, type: 3}
+  <Preview>k__BackingField: {fileID: 21300000, guid: 60ea678cd45d6894bb355468a55e1131, type: 3}
   <MinigameName>k__BackingField: Floor is lava!
   <PossibleWin>k__BackingField: 20
   <PossibleLost>k__BackingField: 15

@@ -24,7 +24,7 @@ public class MinigamePanel : MonoBehaviour
     {
         applyButton.onClick.AddListener(OnApply);
 
-        title.text = minigame.name;
+        title.text = minigame.MinigameName;
         preview.sprite = minigame.Preview;
 
         int win = RandomizeStat(minigame.PossibleWin, 6);
