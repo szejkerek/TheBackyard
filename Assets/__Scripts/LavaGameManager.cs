@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using Tayx.Graphy.Utils.NumString;
+using System;
 
 public class LavaGameManager : MonoBehaviour
 {
@@ -147,7 +148,7 @@ public class LavaGameManager : MonoBehaviour
 
     void CycleThroughLavaPoolState()
     {
-        lavaPool.UpwardsGrowthPerSecond = growthSteps[currentStep] * sign;
+        lavaPool.UpwardsGrowthPerSecond = MathF.Abs(growthSteps[currentStep] * sign);
         lavaPool.Active = !lavaPool.Active;
         Invoke(nameof(CycleThroughLavaPoolState), intervalsBetweenSteps[currentStep]);
 

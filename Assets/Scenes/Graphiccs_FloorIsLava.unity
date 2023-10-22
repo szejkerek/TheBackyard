@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 169a1b8f06c17c84e8de491f2bfef986, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43673804, g: 0.48435062, b: 0.5646031, a: 1}
+  m_IndirectSpecularColor: {r: 0.5905447, g: 0.396132, b: 0.6245573, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -418,6 +418,22 @@ PrefabInstance:
       propertyPath: OnLavaTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7043246621480319985, guid: 4fcaf34d876225646a1398502f6d3de5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043246621480319985, guid: 4fcaf34d876225646a1398502f6d3de5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043246621480319985, guid: 4fcaf34d876225646a1398502f6d3de5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043246621480319985, guid: 4fcaf34d876225646a1398502f6d3de5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8263512810555342523, guid: 4fcaf34d876225646a1398502f6d3de5, type: 3}
       propertyPath: m_Name
       value: RisingLava
@@ -566,7 +582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.200012, y: 200}
+  m_AnchoredPosition: {x: -18.200012, y: 173}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445059519
@@ -591,8 +607,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f05ce61ac1278bd4c9122d36a4aea1cd, type: 2}
+  m_sharedMaterial: {fileID: -791139899467288412, guid: f05ce61ac1278bd4c9122d36a4aea1cd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -622,8 +638,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
-  m_HorizontalAlignment: 1
+  m_fontStyle: 17
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -652,7 +668,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -85.18915, y: 0, z: -91.14035, w: 0}
+  m_margin: {x: -139.21213, y: 0, z: -178.04343, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -841,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchLimit: 2
   touchUpwardsFroce: 1
-  gameTimeInSeconds: 10
+  gameTimeInSeconds: 50
   lavaDropdownSpeed: -30
   playerWonEvent:
     m_PersistentCalls:
@@ -851,14 +867,14 @@ MonoBehaviour:
       m_Calls: []
   growthSteps:
   - 0
-  - 0
+  - 0.3
+  - 0.3
+  - 1
+  - 0.3
   - 0.5
-  - 0.5
-  - 0.8
-  - 0
-  intervalsBetweenSteps: 020000000200000003000000030000000400000004000000
+  intervalsBetweenSteps: 020000000200000002000000020000000200000002000000
   suddenDeathGrowthPerSecond: 6
-  secondsToSuddenDeath: 10
+  secondsToSuddenDeath: 133
   lavaPool: {fileID: 1351647828}
   player: {fileID: 1078609451}
   timeLeft: 

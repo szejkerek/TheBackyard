@@ -12,6 +12,7 @@ public class ArenaManager : Singleton<ArenaManager>
             Debug.LogError("Couldn't get arena information!");
             currentInfo = DebugArenaInfo();
         }
+        Debug.Log(currentInfo.character);
     }
 
     public void WinArena()

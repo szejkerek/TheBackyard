@@ -7,7 +7,7 @@ public class CharacterCreator : MonoBehaviour
     CharacterInfo characterInfo;
     CharacterAppearanceCreator characterAppearanceCreator;
 
-    private void Awake()
+    private void Start()
     {
         characterAppearanceCreator = GetComponentInChildren<CharacterAppearanceCreator>();
     }
@@ -25,5 +25,6 @@ public class CharacterCreator : MonoBehaviour
         stats.RandomizeStats();
         CharacterInfo characterInfo = new CharacterInfo(stats, customSet);
         this.characterInfo = characterInfo;
+        characterAppearanceCreator.GenerateCharacterAppearance(characterInfo.customSet);
     }
 }
