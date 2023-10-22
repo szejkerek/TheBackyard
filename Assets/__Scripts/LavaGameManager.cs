@@ -1,6 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
+using Tayx.Graphy.Utils.NumString;
 
 public class LavaGameManager : MonoBehaviour
 {
@@ -29,7 +35,13 @@ public class LavaGameManager : MonoBehaviour
     [Space]
     [Header("Heretic debug")]
     [SerializeField] private string timeLeft;
-    
+    [SerializeField] private float timeRemaining = 10;
+    [SerializeField] private bool timerIsRunning = false;
+
+    [Space]
+    [Header("Timer display")]
+    [SerializeField] private TMP_Text timerText;
+
     private PlayerMovement pm;
     private CameraTargetFollower ctf;
     private TriggerTimer winTimer;
@@ -37,6 +49,8 @@ public class LavaGameManager : MonoBehaviour
     private int touchesSoFar = 0;
     private int sign = 1;
     private int currentStep = 0;
+
+
 
     private void Awake()
     {
@@ -54,7 +68,45 @@ public class LavaGameManager : MonoBehaviour
         winTimer.Start();
     }
 
-    void Start()
+    private void Start()
+    {
+        //set timer for 1s
+        // Start lava
+    }
+
+    void Update()
+    {
+        //do usuniecia, wrzucenia w start
+        if(Input.GetKeyDown("l"))
+        {
+            //StartLava();
+            timerIsRunning = true;
+        }
+
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                DisplayTime(timeRemaining.ToInt());
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                DisplayTime(timeRemaining.ToInt());
+
+                timerIsRunning = false;
+
+                StartLava();
+                winTimer.Update(Time.deltaTime * 1000.0f);
+                timeLeft = Clock.FormatToMinSec((int)winTimer.TimeLeft);
+            }
+        }
+
+
+    }
+    void StartLava()
     {
         lavaPool.gameObject.SetActive(true);
         lavaPool.Active = false;
@@ -64,12 +116,6 @@ public class LavaGameManager : MonoBehaviour
         lavaPool.OnLavaTrigger.AddListener(OnObjectLavaTrigger);
 
         Invoke(nameof(SuddenDeath), secondsToSuddenDeath);
-    }
-
-    void Update()
-    {
-        winTimer.Update(Time.deltaTime * 1000.0f);
-        timeLeft = Clock.FormatToMinSec((int)winTimer.TimeLeft);
     }
 
     void OnObjectLavaTrigger(GameObject collidedObject)
@@ -92,6 +138,8 @@ public class LavaGameManager : MonoBehaviour
 
     void SuddenDeath()
     {
+        timerText.text = "You Lost, it was sudden";
+        timerText.color = Color.red;
         CancelInvoke();
 
         lavaPool.UpwardsGrowthPerSecond = suddenDeathGrowthPerSecond;
@@ -121,6 +169,8 @@ public class LavaGameManager : MonoBehaviour
         playerWonEvent?.Invoke();
         CancelInvoke();
 
+        timerText.text = "You Won!";
+        timerText.color = Color.green;
         Debug.Log("Player won");
     }
 
@@ -138,7 +188,17 @@ public class LavaGameManager : MonoBehaviour
 
         playerLostEvent?.Invoke();
         winTimer.Stop();
-        
+
+        timerText.text = "You Lost";
+        timerText.color = Color.red;
         Debug.Log("Player lost :OOOO");
+    }
+    void DisplayTime(float timeToDisplay)
+    {
+        if (timeToDisplay > 0)
+            timerText.text = "Lava starts in: " + timeToDisplay.ToString();
+
+        else
+            timerText.text =  "";
     }
 }
