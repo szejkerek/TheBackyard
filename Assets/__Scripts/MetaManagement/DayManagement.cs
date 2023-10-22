@@ -16,6 +16,7 @@ public class DayManagement : Singleton<DayManagement>
         characterPicker.gameObject.SetActive(false);
         cycleManager = MetaGameplayManager.Instance.CycleManager;
         timeText.text = $"Time left: {cycleManager.HoursLeft}h";
+        MetaGameplayManager.Instance.SetActivePersistentUI(true);
     }
 
     public void GoIntoArena(int characterIndex) 
