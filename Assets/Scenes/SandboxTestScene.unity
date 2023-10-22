@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3976,7 +3976,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1584503160502520014, guid: 4d53adeb5c0df4044a4e466870a3ba4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1671767401}
   m_SourcePrefab: {fileID: 100100000, guid: 4d53adeb5c0df4044a4e466870a3ba4f, type: 3}
 --- !u!1 &608637739
 GameObject:
@@ -6076,7 +6079,7 @@ MonoBehaviour:
   playerLostEvent:
     m_PersistentCalls:
       m_Calls: []
-  growthSteps: 010000000100000002000000020000000300000003000000
+  growthSteps: []
   intervalsBetweenSteps: 020000000200000003000000030000000400000004000000
   suddenDeathGrowthPerSecond: 6
   secondsToSuddenDeath: 10
@@ -7584,7 +7587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158231226262736007, guid: a1428afc211671b42a888650044b0ce4, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4705295452375788075, guid: a1428afc211671b42a888650044b0ce4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10529,6 +10532,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1584503160502520014, guid: 4d53adeb5c0df4044a4e466870a3ba4f, type: 3}
   m_PrefabInstance: {fileID: 581098593}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1671767401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671767394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa1eb9ddf728854ea4f7d4907e8d0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682463508
 GameObject:
   m_ObjectHideFlags: 0

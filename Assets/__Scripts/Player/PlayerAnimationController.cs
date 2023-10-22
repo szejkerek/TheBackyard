@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Transform sprite;
+
     void Start()
     {
-        
+        sprite = transform.Find("Sprite").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.05f)
+        {
+            sprite.localScale = new Vector3(Mathf.Sign(Input.GetAxisRaw("Horizontal")) * -1, 1, 1);
+        }
     }
 }
