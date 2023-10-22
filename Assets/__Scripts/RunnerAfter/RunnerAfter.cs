@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class RunnerAfter : MonoBehaviour
 {
     public RunnerAfter currentRunnerAfter;
+    public RunnerAfter previousRunnerAfter = null;
     public RunnerAfter closestRunner;
 
     [SerializeField] protected SphereCollider taggingRange;
@@ -25,7 +26,7 @@ public class RunnerAfter : MonoBehaviour
 
         foreach (RunnerAfter obj in runners)
         {
-            if (obj == this)
+            if (obj == this || obj == previousRunnerAfter)
             {
                 continue;
             }

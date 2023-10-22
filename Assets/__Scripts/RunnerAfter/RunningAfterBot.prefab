@@ -122,16 +122,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRunnerAfter: {fileID: 0}
+  previousRunnerAfter: {fileID: 0}
   closestRunner: {fileID: 0}
   taggingRange: {fileID: 0}
   taggingCooldown: 5
   taggingTimer: 0
   runners: []
-  maxDelay: 5
   currentDelay: 0
-  runningSpeed: 3
+  runningSpeed: 5
   agent: {fileID: 0}
-  randomMovementWiggleMaxRange: 7
 --- !u!195 &2084741617080052046
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -142,7 +141,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

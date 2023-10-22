@@ -1,6 +1,8 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+
 
 public class RisingLava : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class RisingLava : MonoBehaviour
         {
             return;
         }
+        
 
         transform.position += Time.deltaTime * upwardsGrowthPerSecond * Vector3.up;
     }

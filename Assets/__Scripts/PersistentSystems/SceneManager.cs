@@ -4,9 +4,13 @@ using UnityEngine;
 
 public enum SceneEnum
 {
+    MainMenu,
+    Credits,
+    CharacterSelection,
     DayManagmentScene,
     NightManagementScene,
-    DebugArena
+    FloorIsLava_Minigame,
+    RunnerAfter_Minigame
 }
 
 

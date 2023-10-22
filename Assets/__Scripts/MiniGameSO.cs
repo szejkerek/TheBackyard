@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "MinigameSO", menuName = "MinigameSO", order = 1)]
-public class MinigameSO : ScriptableObject
+[CreateAssetMenu(fileName = "MiniGameSO", menuName = "MiniGameSO", order = 1)]
+public class MiniGameSO : ScriptableObject
 {
-    [field: SerializeField] public int SceneIndex { private set; get; }
-    [field: SerializeField] public Image Preview { private set; get; }
+    [field: SerializeField] public SceneEnum SceneEnum { private set; get; }
+    [field: SerializeField] public Sprite Preview { private set; get; }
     [field: SerializeField] public string MinigameName { private set; get; }
-    [field: SerializeField] public int PotentialWin { private set; get; }
-    [field: SerializeField] public int PotentialLose { private set; get; }
+    [field: SerializeField] public int PossibleWin { private set; get; }
+    [field: SerializeField] public int PossibleLost { private set; get; }
     [field: SerializeField] public int TimeSpend { private set; get; }
 }

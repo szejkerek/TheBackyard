@@ -226,6 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ff922a546e3c444af104f69ef19279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomizeOnStart: 0
+  playableIndex: 8
 --- !u!114 &7182332600226816889
 MonoBehaviour:
   m_ObjectHideFlags: 0

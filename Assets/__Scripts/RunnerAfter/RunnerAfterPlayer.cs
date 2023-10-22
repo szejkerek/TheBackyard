@@ -32,7 +32,7 @@ public class RunnerAfterPlayer : RunnerAfter
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && taggingTimer >= taggingCooldown)
+        if (Input.GetKeyDown(KeyCode.E) && taggingTimer >= taggingCooldown)
         {
             Debug.Log("Tagging closest runner. PLAYER");
             taggingTimer = 0;
