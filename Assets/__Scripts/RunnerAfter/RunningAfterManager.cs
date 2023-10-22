@@ -49,6 +49,7 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
     public bool GameWon()
     {
         AudioManager.Instance.StopGlobalSound();
+        //AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
         return !(RunnerAfterPlayer)currentRunnerAfter;
     }
     bool winOnce = false;
@@ -62,10 +63,12 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
             var gameWon = GameWon();
             if(gameWon)
             {
+                AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
                 arena.WinArena();
             }
             else
             {
+                AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Lose);
                 arena.LoseArena();
             }
             winOnce = true;

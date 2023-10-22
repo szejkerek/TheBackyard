@@ -173,6 +173,7 @@ public class LavaGameManager : MonoBehaviour
         timerText.color = Color.green;
         Debug.Log("Player won");
         AudioManager.Instance.StopGlobalSound();
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
     }
 
     private void OnPlayerLost()
@@ -194,6 +195,7 @@ public class LavaGameManager : MonoBehaviour
         Debug.Log("Player lost");
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleLong);
         AudioManager.Instance.StopGlobalSound();
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Lose);
     }
     void DisplayTime(float timeToDisplay)
     {
