@@ -17,6 +17,11 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
     [SerializeField] TMP_Text dayText;
     [SerializeField] TMP_Text endGame;
 
+
+    [Header("Skybox")]
+    [SerializeField] Material sbDay;
+    [SerializeField] Material sbNight;
+
     public MoneyHolder MoneyHolder => moneyHolder;
     private MoneyHolder moneyHolder;
 
@@ -32,7 +37,7 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
 
         SceneManager.Instance.OnSceneChanged += UpdateDayDisplay;
         SceneManager.Instance.OnSceneChanged += UpdateMoneyDisplay;
-        
+
         UpdateDayDisplay();
         UpdateMoneyDisplay();
     }
@@ -45,18 +50,20 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
     public void NextCycle()
     {
         cycleManager.GoToNextCycle();
+        if (cycleManager.IsDay) RenderSettings.skybox = sbDay;
+        else RenderSettings.skybox = sbNight;
     }
 
     private void UpdateDayDisplay()
     {
         string dayIndex = cycleManager.CurrentDay.ToString();
         string cycleType = cycleManager.IsDay ? "Day" : "Night";
-        dayText.text = $"{dayIndex} day - {cycleType}";
+        dayText.text = $"Day {dayIndex} - {cycleType}";
     }
 
     void UpdateMoneyDisplay()
     {
         string moneyString = moneyHolder.Money.ToString();
-        moneyText.text = $"{moneyString} money";
+        moneyText.text = $"{moneyString} caps";
     }
 }

@@ -28,7 +28,7 @@ public class ArenaManager : Singleton<ArenaManager>
     {
         MetaGameplayManager meta = MetaGameplayManager.Instance;
         meta.MoneyHolder.RemoveMoney(currentInfo.moneyLoss);
-        meta.CycleManager.DecrementHours((int) (currentInfo.timeLoss));
+        meta.CycleManager.DecrementHours(currentInfo.timeLoss);
         SceneManager.Instance.LoadScene(SceneEnum.DayManagmentScene);
     }
 
