@@ -4,26 +4,12 @@ using UnityEngine;
 
 public class CharacterCreator : MonoBehaviour
 {
-    [SerializeField] bool setPlayer = false;
-    [SerializeField] int playableIndex = 0;
     CharacterInfo characterInfo;
     CharacterAppearanceCreator characterAppearanceCreator;
 
     private void Start()
     {
         characterAppearanceCreator = GetComponentInChildren<CharacterAppearanceCreator>();
-
-        if (!setPlayer)
-        {
-            CreateRandom();
-        }
-        else
-        {
-            if(playableIndex >= 0 && playableIndex < 3) 
-            { 
-                Create(GameManager.Instance.PlayableCharacters[playableIndex]); 
-            }          
-        }
     }
 
     public void Create(CharacterInfo characterInfo)
