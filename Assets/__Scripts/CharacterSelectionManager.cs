@@ -20,20 +20,24 @@ public class CharacterSelectionManager : Singleton<CharacterSelectionManager>
 
     public void RandomizeFirst()
     {
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
         AssignCharacterInfo(first, 0, randomize: true);
     }
 
     public void RandomizeSencond()
     {
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
         AssignCharacterInfo(sencond, 1, randomize: true);
     }
 
     public void RandomizeThird()
     {
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
         AssignCharacterInfo(third, 2, randomize: true);
     }
     public void LoadGame()
     {
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
         AssignCharacterInfo(first, 0, randomize: false);
         AssignCharacterInfo(sencond, 1, randomize: false);
         AssignCharacterInfo(third, 2, randomize: false);
