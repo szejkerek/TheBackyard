@@ -13,14 +13,6 @@ public class CharacterAppearanceCreator : MonoBehaviour
     [SerializeField]
     private SpriteRenderer LegR, LegL;
 
-    private void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.G))
-        {
-            RandomizeSet();
-        }
-    }
-
     public void GenerateCharacterAppearance(CustomModularSet customModular)
     {
         Body.sprite = customModular.Body;
