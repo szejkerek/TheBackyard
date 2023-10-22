@@ -8,56 +8,61 @@ using UnityEngine.UI;
 public class UpgradeCharacterManager : Singleton<UpgradeCharacterManager>
 {
     public List<CharacterInfo> charactersInfo;
+    public List<CharacterTexts> characterTexts;
 
     [SerializeField] private List<GameObject> teammatePanels;
-    [SerializeField] private List<CharacterInfoText> charactersText;
+    [SerializeField] private int capsellCostIncrement = 5;
+    [SerializeField] private int baseCapsellCost = 5;
 
-    public void UpdateCharacterInfo(CharacterInfo characterInfo)
+    public void UpdateCharacterInfo(CharacterInfo characterInfo, bool updateSpeed)
     {
         var index = charactersInfo.IndexOf(characterInfo);
         charactersInfo[index] = characterInfo;
-        //var updatedList = new List<string>();
-        //charactersText[index].texts =
+
+        if (updateSpeed)
+        {
+            if (MetaGameplayManager.Instance.MoneyHolder.Money > characterTexts[index].capsellSpeedCost)
+            {
+                characterTexts[index].capsellSpeedCost += capsellCostIncrement;
+                characterTexts[index].characterSpeed.text = $"Speed: {characterTexts[index].characterInfo.stats.speed}";
+                characterTexts[index].characterSpeedCost.text = $"Cost: {characterTexts[index].capsellSpeedCost}";
+                MetaGameplayManager.Instance.MoneyHolder.RemoveMoney(characterTexts[index].capsellSpeedCost);
+                Debug.Log($"Removed {characterTexts[index].capsellSpeedCost} money");
+            }
+        }
+        else
+        {
+            if (MetaGameplayManager.Instance.MoneyHolder.Money > characterTexts[index].capsellAgilityCost)
+            {
+                characterTexts[index].capsellAgilityCost += capsellCostIncrement;
+                characterTexts[index].characterAgility.text = $"Agility: {characterTexts[index].characterInfo.stats.agility}";
+                characterTexts[index].characterAgilityCost.text = $"Cost: {characterTexts[index].capsellAgilityCost}";
+                MetaGameplayManager.Instance.MoneyHolder.RemoveMoney(characterTexts[index].capsellAgilityCost);
+                Debug.Log($"Removed {characterTexts[index].capsellAgilityCost} money");
+            }
+        }
     }
 
     private void Start()
     {
         charactersInfo = GameManager.Instance.PlayableCharacters;
-
-        var panelParent = GameObject.Find("Team");
-        
-        for(int i = 0; i < panelParent.transform.childCount; i++)
+        for (int i = 0; i < charactersInfo.Count; i++)
         {
-            var child = panelParent.transform.GetChild(i);
-            if (child.name.StartsWith("Teammate"))
-            {
-                teammatePanels.Add(child.gameObject);
-            }
+            characterTexts[i].characterInfo = charactersInfo[i];
+            characterTexts[i].capsellAgilityCost = baseCapsellCost;
+            characterTexts[i].capsellSpeedCost = baseCapsellCost;
         }
-
-        foreach (var info in charactersInfo)
-        {
-            var textsList = new List<TextMeshProUGUI>();
-
-            foreach (var teammate in teammatePanels)
-            {
-                var text = teammate.transform.GetChild(1).GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-                textsList.Add(text); // Teammate01.Teammate.Agility.Vertical.Image.CostTxt
-                Debug.Log($"Found {text.text}");
-            }
-
-            charactersText.Add(new CharacterInfoText
-            {
-                textInfo = info,
-                texts = textsList
-            });
-        }
-
     }
-}
 
-public class CharacterInfoText
-{
-    public CharacterInfo textInfo;
-    public List<TextMeshProUGUI> texts;
+    [System.Serializable]
+    public class CharacterTexts
+    {
+        public CharacterInfo characterInfo;
+        public int capsellAgilityCost;
+        public int capsellSpeedCost;
+        public TextMeshProUGUI characterAgility;
+        public TextMeshProUGUI characterAgilityCost;
+        public TextMeshProUGUI characterSpeed;
+        public TextMeshProUGUI characterSpeedCost;
+    }
 }

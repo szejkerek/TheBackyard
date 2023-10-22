@@ -15,12 +15,13 @@ public class UpdateStatistic : MonoBehaviour
         if (updateSpeed)
         {
             character.stats.speed += updateValue;
+            
         }
         else
         {
             character.stats.agility += updateValue;
         }
 
-        UpgradeCharacterManager.Instance.UpdateCharacterInfo(character);
+        UpgradeCharacterManager.Instance.UpdateCharacterInfo(character, updateSpeed);
     }
 }
