@@ -49,6 +49,7 @@ public class LavaGameManager : MonoBehaviour
     private int touchesSoFar = 0;
     private int sign = 1;
     private int currentStep = 0;
+    private bool lavaHasStarted = false;
 
 
 
@@ -70,19 +71,11 @@ public class LavaGameManager : MonoBehaviour
 
     private void Start()
     {
-        //set timer for 1s
-        // Start lava
+        timerIsRunning = true;
     }
 
     void Update()
     {
-        //do usuniecia, wrzucenia w start
-        if(Input.GetKeyDown("l"))
-        {
-            //StartLava();
-            timerIsRunning = true;
-        }
-
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -97,6 +90,7 @@ public class LavaGameManager : MonoBehaviour
                 DisplayTime(timeRemaining.ToInt());
 
                 timerIsRunning = false;
+                lavaHasStarted = true;
 
                 StartLava();
                 winTimer.Update(Time.deltaTime * 1000.0f);
@@ -104,6 +98,11 @@ public class LavaGameManager : MonoBehaviour
             }
         }
 
+        if(lavaHasStarted == true)
+        {
+            winTimer.Update(Time.deltaTime * 1000.0f);
+            timeLeft = Clock.FormatToMinSec((int)winTimer.TimeLeft);
+        }
 
     }
     void StartLava()
