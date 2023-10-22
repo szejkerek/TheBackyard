@@ -28,6 +28,7 @@ public class FadeScreen : MonoBehaviour
     public void FadeOut()
     {
         Fade(0, 1);
+        SceneManager.Instance.OnSceneFullyLoaded?.Invoke();
     }
 
     public void Fade(float alphaIn, float alphaOut)

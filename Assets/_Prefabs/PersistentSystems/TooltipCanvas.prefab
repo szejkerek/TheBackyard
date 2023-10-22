@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6840474376529707872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31,7 +31,7 @@ RectTransform:
   m_GameObject: {fileID: 1680151698413833375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.24706618, y: 0.24706618, z: 0.24706618}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6387538488932987305}
@@ -40,9 +40,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1339.6, y: 1633.7646}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 1.764977, y: 1.3}
+  m_AnchoredPosition: {x: -102.83724, y: 1369.5156}
+  m_SizeDelta: {x: 1200, y: 846.88}
+  m_Pivot: {x: 0.44643894, y: 1.3}
 --- !u!222 &7183545310256488891
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 160
+    m_Right: 145
+    m_Top: 100
+    m_Bottom: 143
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 80
+  m_PreferredWidth: 1200
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -156,7 +156,7 @@ MonoBehaviour:
   headerField: {fileID: 137051570503790337}
   contentField: {fileID: 3298985967234661590}
   layout: {fileID: 2877917380439839466}
-  characterWrap: 91
+  characterWrap: 80
   rectTransform: {fileID: 6840474376529707872}
 --- !u!1 &5606295184919321540
 GameObject:
@@ -289,10 +289,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6840474376529707872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 607.5, y: -448.695}
+  m_SizeDelta: {x: 895, y: 510.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8213775915063884906
 CanvasRenderer:
@@ -322,7 +322,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COSS
+  m_text: When you use the Editor, you can save data to ScriptableObjects When you
+    use the Editor, you can save data to ScriptableObjects while editing and at run
+    time because ScriptableObjects use the Editor namespace and Editor scripting.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05ce61ac1278bd4c9122d36a4aea1cd, type: 2}
   m_sharedMaterial: {fileID: -791139899467288412, guid: f05ce61ac1278bd4c9122d36a4aea1cd, type: 2}
@@ -349,8 +351,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 55.2
+  m_fontSizeBase: 55.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -385,7 +387,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 33.991425, z: -92.79053, w: 0}
+  m_margin: {x: 0, y: 33.991425, z: 6.4723206, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -423,10 +425,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6840474376529707872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 312.08502, y: -146.755}
+  m_SizeDelta: {x: 304.17, y: 93.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8664569258521452458
 CanvasRenderer:
@@ -456,7 +458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Header
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05ce61ac1278bd4c9122d36a4aea1cd, type: 2}
   m_sharedMaterial: {fileID: -791139899467288412, guid: f05ce61ac1278bd4c9122d36a4aea1cd, type: 2}
@@ -483,8 +485,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 93.5
+  m_fontSizeBase: 93.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
