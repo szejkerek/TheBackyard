@@ -7,7 +7,7 @@ public class CharacterCreator : MonoBehaviour
     CharacterInfo characterInfo;
     CharacterAppearanceCreator characterAppearanceCreator;
 
-    private void Start()
+    private void Awake()
     {
         characterAppearanceCreator = GetComponentInChildren<CharacterAppearanceCreator>();
     }
