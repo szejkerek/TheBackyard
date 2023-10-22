@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RunningAfterManager : Singleton<RunningAfterManager>
 {
+    [SerializeField] ArenaManager arena;
     [SerializeField] private List<RunnerAfter> runners;
     private RunnerAfter currentRunnerAfter;
     public RunnerAfter previousRunnerAfter = null;
@@ -50,12 +51,25 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
         AudioManager.Instance.StopGlobalSound();
         return !(RunnerAfterPlayer)currentRunnerAfter;
     }
-
+    bool winOnce = false;
     private void Update()
     {
         if(currentTime <= 0)
         {
+            if (winOnce)
+                return;
+
             var gameWon = GameWon();
+            if(gameWon)
+            {
+                arena.WinArena();
+            }
+            else
+            {
+                arena.LoseArena();
+            }
+            winOnce = true;
+
             return;
         }
         currentTime -= Time.deltaTime;
