@@ -11,18 +11,19 @@ public class EnemyAnimator : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        sprite = transform.Find("Sprite").transform;
-        agent = GetComponent<NavMeshAgent>();
+        animator = transform.parent.GetComponent<Animator>();
+        animator.SetBool("isIdle", false);
+        //sprite = transform.Find("Sprite").transform;
+        //agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        if (Mathf.Abs(agent.velocity.x) > 0.05f)
+        /*if (Mathf.Abs(agent.velocity.x) > 0.05f)
         {
             sprite.localScale = new Vector3(Mathf.Sign(Input.GetAxisRaw("Horizontal")) * -1, 1, 1);
         }
         if (Mathf.Abs(agent.velocity.x) > 0.05f || (Mathf.Abs(agent.velocity.y) > 0.05f)) animator.SetBool("isIdle", false);
-        else animator.SetBool("isIdle", true);
+        else animator.SetBool("isIdle", true);*/
     }
 }

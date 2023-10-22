@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1075,6 +1075,8 @@ GameObject:
   m_Component:
   - component: {fileID: 129561676}
   - component: {fileID: 129561677}
+  - component: {fileID: 129561678}
+  - component: {fileID: 129561679}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -1124,6 +1126,30 @@ MonoBehaviour:
   Head: {fileID: 1989431234}
   LegR: {fileID: 1812258482}
   LegL: {fileID: 1721727486}
+--- !u!114 &129561678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129561675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726a67837c9b1db42953646fc0e85a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &129561679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129561675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5832f430ee0d229409f10825e599de8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &148433281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10322,6 +10348,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7635547016690334457, guid: 0b41ebddf2371b047948eabf33ec3d4a, type: 3}
   m_PrefabInstance: {fileID: 2399549635575704653}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1764961245
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764961236}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9b979cf2cabe6f468272cf6d9dfaf39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1778466707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13037,6 +13084,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 291342890359153743, guid: 0b41ebddf2371b047948eabf33ec3d4a, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1764961239}
+    - targetCorrespondingSourceObject: {fileID: 291342890359153743, guid: 0b41ebddf2371b047948eabf33ec3d4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1764961245}
   m_SourcePrefab: {fileID: 100100000, guid: 0b41ebddf2371b047948eabf33ec3d4a, type: 3}
 --- !u!1001 &6858273284249965630
 PrefabInstance:
