@@ -24,6 +24,11 @@ public class AudioManager : Singleton<AudioManager>
         _musicSource.loop = true;
         _musicSource.Play();
     }
+    public void StopGlobalSound() 
+    {
+        _musicSource.Stop();
+    }
+
 
     public void PlayGlobalSound(AudioClip clip, float vol = 1, bool randomPitch = false)
     {
@@ -35,6 +40,7 @@ public class AudioManager : Singleton<AudioManager>
         if (randomPitch)
             _soundSource.pitch = 1;
     }
+
 }
 //AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Test);
 //AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.TestMusic);

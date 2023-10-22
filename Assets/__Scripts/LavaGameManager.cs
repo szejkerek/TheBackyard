@@ -73,6 +73,7 @@ public class LavaGameManager : MonoBehaviour
     private void Start()
     {
         timerIsRunning = true;
+        AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.FloorIsLava);
     }
 
     void Update()
@@ -133,6 +134,7 @@ public class LavaGameManager : MonoBehaviour
         }
 
         pm.JumpWithHeight(touchUpwardsFroce);
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleOnce);
         touchesSoFar++;
     }
 
@@ -172,6 +174,7 @@ public class LavaGameManager : MonoBehaviour
         timerText.text = "You Won!";
         timerText.color = Color.green;
         Debug.Log("Player won");
+        AudioManager.Instance.StopGlobalSound();
     }
 
     private void OnPlayerLost()
@@ -192,6 +195,8 @@ public class LavaGameManager : MonoBehaviour
         timerText.text = "You Lost";
         timerText.color = Color.red;
         Debug.Log("Player lost");
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleLong);
+        AudioManager.Instance.StopGlobalSound();
     }
     void DisplayTime(float timeToDisplay)
     {
