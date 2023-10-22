@@ -776,6 +776,8 @@ MonoBehaviour:
   moneyText: {fileID: 2790802122423841876}
   dayText: {fileID: 2125678495756085580}
   endGame: {fileID: 1055450064900813379}
+  sbDay: {fileID: 2100000, guid: 77715b8b6b248994891d3ccad1ad330b, type: 2}
+  sbNight: {fileID: 2100000, guid: ceb0a3ed2cb53a94fa21843cc958c52b, type: 2}
 --- !u!1 &5441608661641688030
 GameObject:
   m_ObjectHideFlags: 0
