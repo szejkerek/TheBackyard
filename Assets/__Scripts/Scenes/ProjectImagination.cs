@@ -32,7 +32,5 @@ public class ProjectImagination : MonoBehaviour
             ImaginaryObject.SetActive(true);
             Imagination = true;
         }
-
-
     }
 }

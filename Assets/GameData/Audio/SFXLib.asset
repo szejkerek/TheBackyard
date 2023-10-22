@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2d310455baa2d49bd2f7409ef2b6ef, type: 3}
   m_Name: SFXLib
   m_EditorClassIdentifier: 
-  <Hitmarker>k__BackingField: {fileID: 0}
+  <Test>k__BackingField: {fileID: 0}
+  <MouseClick>k__BackingField: {fileID: 8300000, guid: c3dc617b775ee074aa6b51c78d3f2651, type: 3}
+  <Click1>k__BackingField: {fileID: 8300000, guid: 84b1b2155fd103547975835e1a67f867, type: 3}
+  <Click2>k__BackingField: {fileID: 8300000, guid: 854e4999e02d1b744822027e955ae6d0, type: 3}
+  <SizzleOnce>k__BackingField: {fileID: 8300000, guid: 97c9dbff2e26c4347bfb390ad204ef8a, type: 3}
+  <SizzleLong>k__BackingField: {fileID: 8300000, guid: 3101443f6e01d46449b7ccc63bd0f4e3, type: 3}
