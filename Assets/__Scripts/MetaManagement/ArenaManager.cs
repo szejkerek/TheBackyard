@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArenaManager : Singleton<ArenaManager>
 {
+
+
     ArenaInformation currentInfo;
     private void Start()
     {
