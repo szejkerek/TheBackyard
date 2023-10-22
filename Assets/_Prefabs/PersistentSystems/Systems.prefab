@@ -117,7 +117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9088585402211120613
 RectTransform:
   m_ObjectHideFlags: 0
@@ -750,9 +750,9 @@ MonoBehaviour:
   startMoneyMax: 30
   limitDays: 14
   timePerDay: 10
+  persistenUI: {fileID: 1716631997752317116}
   moneyText: {fileID: 2790802122423841876}
   dayText: {fileID: 2125678495756085580}
-  endGame: {fileID: 0}
 --- !u!1 &5441608661641688030
 GameObject:
   m_ObjectHideFlags: 0

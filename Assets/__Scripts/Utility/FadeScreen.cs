@@ -23,6 +23,7 @@ public class FadeScreen : MonoBehaviour
     public void FadeIn()
     {
         Fade(1, 0);
+        MetaGameplayManager.Instance.SetActivePersistentUI(false);
     }
 
     public void FadeOut()
