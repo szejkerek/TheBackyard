@@ -16,6 +16,8 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
 
     public void UpdateRunnerAfter(RunnerAfter currentRunner)
     {
+        AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Click2);
+
         previousRunnerAfter = currentRunnerAfter;
         if(previousRunnerAfter != null) Debug.Log(previousRunnerAfter.gameObject.name);
         currentRunnerAfter = currentRunner;
@@ -39,10 +41,13 @@ public class RunningAfterManager : Singleton<RunningAfterManager>
             runner.runners = runners;
             runner.currentRunnerAfter = runners[randomRunnerIndex];
         }
+
+        AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.PlayTag);
     }
 
     public bool GameWon()
     {
+        AudioManager.Instance.StopGlobalSound();
         return !(RunnerAfterPlayer)currentRunnerAfter;
     }
 
