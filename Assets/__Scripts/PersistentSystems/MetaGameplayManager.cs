@@ -51,12 +51,12 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
     {
         string dayIndex = cycleManager.CurrentDay.ToString();
         string cycleType = cycleManager.IsDay ? "Day" : "Night";
-        dayText.text = $"{dayIndex} day - {cycleType}";
+        dayText.text = $"Day {dayIndex} - {cycleType}";
     }
 
     void UpdateMoneyDisplay()
     {
         string moneyString = moneyHolder.Money.ToString();
-        moneyText.text = $"{moneyString} money";
+        moneyText.text = $"{moneyString} caps";
     }
 }
