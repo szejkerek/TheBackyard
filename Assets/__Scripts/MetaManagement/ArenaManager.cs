@@ -5,15 +5,14 @@ using UnityEngine;
 public class ArenaManager : Singleton<ArenaManager>
 {
     ArenaInformation currentInfo;
-    [SerializeField] float timeLostMultiplier = 2;
     private void Start()
     {
         currentInfo = GameManager.Instance.ArenaInformation;
 
         if (currentInfo == null)
         {
-            currentInfo = DebugArenaInfo();
             Debug.LogError("Couldn't get arena information!");
+            currentInfo = DebugArenaInfo();
         }
     }
 
@@ -29,7 +28,7 @@ public class ArenaManager : Singleton<ArenaManager>
     {
         MetaGameplayManager meta = MetaGameplayManager.Instance;
         meta.MoneyHolder.RemoveMoney(currentInfo.moneyLoss);
-        meta.CycleManager.DecrementHours((int) (currentInfo.timeLoss * timeLostMultiplier));
+        meta.CycleManager.DecrementHours((int) (currentInfo.timeLoss));
         SceneManager.Instance.LoadScene(SceneEnum.DayManagmentScene);
     }
 

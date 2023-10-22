@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class CharacterInfo
@@ -24,10 +24,13 @@ public class CharacterInfo
 [System.Serializable]
 public class CharacterStats
 {
-    public float stamina = 5;
+    public float agility = 5;
+    public float speed = 5;
 
     public void RandomizeStats()
     {
-        //throw new NotImplementedException();
+        agility = Random.Range(0.1f, 1f);
+        speed = Random.Range(0.1f, 1f);
     }
+
 }
