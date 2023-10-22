@@ -140,7 +140,6 @@ public class LavaGameManager : MonoBehaviour
 
     void SuddenDeath()
     {
-        timerText.text = "You Lost, it was sudden";
         timerText.color = Color.red;
         CancelInvoke();
 
@@ -171,7 +170,6 @@ public class LavaGameManager : MonoBehaviour
         playerWonEvent?.Invoke();
         CancelInvoke();
 
-        timerText.text = "You Won!";
         timerText.color = Color.green;
         Debug.Log("Player won");
         AudioManager.Instance.StopGlobalSound();
@@ -192,7 +190,6 @@ public class LavaGameManager : MonoBehaviour
         playerLostEvent?.Invoke();
         winTimer.Stop();
 
-        timerText.text = "You Lost";
         timerText.color = Color.red;
         Debug.Log("Player lost");
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleLong);
