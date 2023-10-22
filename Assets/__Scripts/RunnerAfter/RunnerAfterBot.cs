@@ -3,12 +3,19 @@ using UnityEngine.AI;
 
 public class RunnerAfterBot : RunnerAfter
 {
-    [SerializeField] float maxDelay = 5.0f;
+    private float maxDelay = 0.5f;
     [SerializeField] float currentDelay = 0;
     [SerializeField] private float runningSpeed;
     [SerializeField] private NavMeshAgent agent;
 
-    [SerializeField] private float randomMovementWiggleMaxRange = 7.0f;
+    private float minWiggleAngle = 20f;
+    private float maxWiggleAngle = 90.0f;
+
+    private float minDirectionChangeDelay = 0.2f;
+    private float maxDirectionChangeDelay = 0.6f;
+
+    private float currentRandomAngle = 0f;
+    private float minDistanceFromRunner = 15f;
 
     private void Start()
     {
@@ -29,13 +36,24 @@ public class RunnerAfterBot : RunnerAfter
             return;
         }
 
-        Vector3 runDirection = transform.position - currentRunnerAfter.transform.position;
-        runDirection.Normalize();
-        Vector3 destination = (transform.position + runDirection * runningSpeed);
+        Vector3 destination = Vector3.zero;
+
+        if(Vector3.Distance(transform.position , currentRunnerAfter.transform.position) < minDistanceFromRunner)
+        {
+            agent.stoppingDistance = 0f;
+            Vector3 runDirection = (transform.position - currentRunnerAfter.transform.position).normalized;
+            runDirection = Quaternion.AngleAxis(currentRandomAngle, Vector3.up) * runDirection;
+            destination = (transform.position + runDirection * runningSpeed);
+        }
+        else
+        {
+            agent.stoppingDistance = 15f;
+        }
 
         if(currentDelay > maxDelay)
         {
-            destination = Quaternion.Euler(0.0f, Random.Range(-randomMovementWiggleMaxRange, randomMovementWiggleMaxRange), 0.0f) * destination;
+            maxDelay = Random.Range(minDirectionChangeDelay, maxDirectionChangeDelay);
+            currentRandomAngle = Mathf.Sign(Random.Range(-1f, 1f)) * Random.Range(minWiggleAngle, maxWiggleAngle);
             currentDelay = 0;
         }
         currentDelay += Time.deltaTime;
