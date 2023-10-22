@@ -4,7 +4,7 @@ using UnityEngine;
 public class ArenaInformation
 {
     public CharacterInfo character;
-    public int sceneIndex;
+    public SceneEnum sceneEnum;
 
     public int moneyWin;
     public int moneyLoss;

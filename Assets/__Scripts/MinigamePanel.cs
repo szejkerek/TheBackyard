@@ -38,7 +38,7 @@ public class MinigamePanel : MonoBehaviour
         tempArenaInfo.moneyWin = win;
         tempArenaInfo.moneyLoss = lose;
         tempArenaInfo.timeLoss = time;
-        tempArenaInfo.sceneIndex = minigame.SceneIndex;
+        tempArenaInfo.sceneEnum = minigame.SceneEnum;
     }
 
     public void OnApply()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7821b930d31a927449e778b1d6012bbd, type: 3}
   m_Name: RunnerAfter
   m_EditorClassIdentifier: 
-  <SceneIndex>k__BackingField: 3
+  <SceneEnum>k__BackingField: 5
   <Preview>k__BackingField: {fileID: 21300000, guid: e8a42a33e283b9b48b7f5aee2cbd16a9, type: 3}
   <MinigameName>k__BackingField: Tag!
   <PossibleWin>k__BackingField: 30
