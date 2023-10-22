@@ -973,6 +973,7 @@ GameObject:
   - component: {fileID: 2083344296}
   - component: {fileID: 2083344295}
   - component: {fileID: 2083344294}
+  - component: {fileID: 2083344297}
   m_Layer: 5
   m_Name: Win
   m_TagString: Untagged
@@ -1094,6 +1095,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083344292}
   m_CullTransparentMesh: 1
+--- !u!114 &2083344297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083344292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8747cec4b6bdfd45af724304349f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Lose
+  content: Lose game
 --- !u!1001 &7900416318817431643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1155,8 +1170,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 7900416318817431643}
   - {fileID: 478620940}
   - {fileID: 1540655978}
   - {fileID: 482950545}
   - {fileID: 794672104}
-  - {fileID: 7900416318817431643}

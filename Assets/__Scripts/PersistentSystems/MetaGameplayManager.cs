@@ -13,9 +13,9 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
     [SerializeField] private int timePerDay;
 
     [Header("UI")]
+    [SerializeField] GameObject persistenUI;
     [SerializeField] TMP_Text moneyText;
     [SerializeField] TMP_Text dayText;
-    [SerializeField] TMP_Text endGame;
 
     public MoneyHolder MoneyHolder => moneyHolder;
     private MoneyHolder moneyHolder;
@@ -32,14 +32,19 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
 
         SceneManager.Instance.OnSceneChanged += UpdateDayDisplay;
         SceneManager.Instance.OnSceneChanged += UpdateMoneyDisplay;
-        
+
         UpdateDayDisplay();
         UpdateMoneyDisplay();
     }
 
+    public void SetActivePersistentUI(bool active)
+    {
+        persistenUI.SetActive(active);
+    }
+
     private void EndGame()
     {
-        endGame.gameObject.SetActive(true);
+        
     }
 
     public void NextCycle()
@@ -51,12 +56,12 @@ public class MetaGameplayManager : Singleton<MetaGameplayManager>
     {
         string dayIndex = cycleManager.CurrentDay.ToString();
         string cycleType = cycleManager.IsDay ? "Day" : "Night";
-        dayText.text = $"{dayIndex} day - {cycleType}";
+        dayText.text = $"Day {dayIndex} - {cycleType}";
     }
 
     void UpdateMoneyDisplay()
     {
         string moneyString = moneyHolder.Money.ToString();
-        moneyText.text = $"{moneyString} money";
+        moneyText.text = $"{moneyString} caps";
     }
 }

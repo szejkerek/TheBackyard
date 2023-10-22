@@ -13,6 +13,7 @@ public enum SceneEnum
 public class SceneManager : Singleton<SceneManager>
 {
     public Action OnSceneChanged;
+    public Action OnSceneFullyLoaded;
     [SerializeField] FadeScreen fadeScreen;
     public void LoadScene(int sceneIndex)
     {
@@ -39,8 +40,10 @@ public class SceneManager : Singleton<SceneManager>
             timer += Time.deltaTime;
             yield return null;
         }
+        
         OnSceneChanged?.Invoke();
         operation.allowSceneActivation = true;
         fadeScreen.FadeIn();
+
     }
 }

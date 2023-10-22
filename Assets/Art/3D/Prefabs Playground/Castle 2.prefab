@@ -149,6 +149,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8348938924979554262, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 032b729d759d8934482ff821e6ff5f6f, type: 2}
+    - target: {fileID: -8348938924979554262, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
     - target: {fileID: -7844581138738390216, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
       propertyPath: m_TagString
       value: Playground_Toy
@@ -161,6 +169,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Playground_Toy
       objectReference: {fileID: 0}
+    - target: {fileID: -4879350520688970336, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: -4879350520688970336, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
+    - target: {fileID: -4412571315837515837, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: -4412571315837515837, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
     - target: {fileID: -4189378458572342352, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
       propertyPath: m_TagString
       value: Playground_Toy
@@ -181,10 +205,50 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Playground_Toy
       objectReference: {fileID: 0}
+    - target: {fileID: 2506578256934086966, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: 2506578256934086966, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
+    - target: {fileID: 2691478062156504048, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: 2691478062156504048, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: fca97d022edd9b947853c1924ea8b305, type: 2}
     - target: {fileID: 2715645089801792768, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
       propertyPath: m_TagString
       value: Playground_Toy
       objectReference: {fileID: 0}
+    - target: {fileID: 2914755977458128163, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: 2914755977458128163, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
+    - target: {fileID: 3960353706268056385, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: 3960353706268056385, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
+    - target: {fileID: 6022730211400985558, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75308cd16bb7b514eb3a32a0202ab3fd, type: 2}
+    - target: {fileID: 6022730211400985558, guid: 7ca6387c776c90b4a9248c110d4eb100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b123873ab339fb44885636420e4155a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

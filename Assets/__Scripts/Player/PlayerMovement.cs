@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Distance for which ground layer is checked for")]
     [SerializeField] private float groundCastCheckDistance = 0.1f;
 
-    [Tooltip("Distance for which ground (ceiling) layer is checked for")]
+    //[Tooltip("Distance for which ground (ceiling) layer is checked for")]
     [SerializeField] private float ceilingCastCheckDistance = 0.1f;
 
     [Tooltip("Distance for which ladder layer is checked for")]
@@ -29,15 +29,15 @@ public class PlayerMovement : MonoBehaviour
 
     [Space]
     [Header("Visible internal variables (do not change)")]
-    [SerializeField] private Vector3 playerVelocity;
-    [SerializeField] private Vector3 playerFlatVelocity;
-    [SerializeField] private float playerSpeed;
-    [SerializeField] private bool isGrounded;
+    private Vector3 playerVelocity;
+    private Vector3 playerFlatVelocity;
+    //[SerializeField] private float playerSpeed;
+    private bool isGrounded;
     [SerializeField] private bool hitCeiling;
-    [SerializeField] private bool isOnDownSlope;
-    [SerializeField] private bool isClimbingLadder;
-    [SerializeField] private Vector3 groundNormal;
-    [SerializeField] private Vector3 ladderNormal;
+    //[SerializeField] private bool isOnDownSlope;
+    private bool isClimbingLadder;
+    private Vector3 groundNormal;
+    private Vector3 ladderNormal;
 
     public Vector3 Velocity => playerVelocity;
     public Vector3 FlatVelocity => playerFlatVelocity;
@@ -46,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 forward;
     private Vector3 right;
     private float lastJumpTimestamp;
+    public Vector3 rightMovement;
+
 
     private void Awake()
     {
@@ -58,21 +60,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
+        isGrounded = controller.isGrounded;
+        //isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
         hitCeiling = CheckForTopCollision(groundMask, ceilingCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
-        isOnDownSlope = PlayerOnDownSlope();
+        //isOnDownSlope = PlayerOnDownSlope();
         isClimbingLadder = PlayerOnLadder();
 
         Vector3 forwardMovement = forward * Input.GetAxisRaw("Vertical");
-        Vector3 rightMovement = right * Input.GetAxisRaw("Horizontal");
+        rightMovement = right * Input.GetAxisRaw("Horizontal");
         Vector3 wishDir = Vector3.Normalize(rightMovement + forwardMovement) * movementSpeed;
 
-        if (isGrounded && playerVelocity.y < 0.0f || hitCeiling && playerVelocity.y > 0.0f)
+        if (isGrounded && playerVelocity.y < 0.0f /*|| hitCeiling && playerVelocity.y > 0.0f*/)
         {
-            playerVelocity.y = 0.0f;
+            playerVelocity.y = -5f;
         }
 
-        if (Input.GetKey(jumpKey) && isGrounded && Time.time - lastJumpTimestamp >= jumpCooldown)
+        if (!hitCeiling && Input.GetKeyDown(jumpKey) && isGrounded && Time.time - lastJumpTimestamp >= jumpCooldown)
         {
             lastJumpTimestamp = Time.time;
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravityForce);
@@ -84,17 +87,17 @@ public class PlayerMovement : MonoBehaviour
         
         playerFlatVelocity = new Vector3(playerVelocity.x, 0.0f, playerVelocity.z);
 
-        if(isOnDownSlope)
+        /*if(isOnDownSlope)
         {
             playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed + Vector3.up * playerVelocity.y;
-        }
+        }*/
 
         if(isClimbingLadder)
         {
             CorrectLadderMovement();
         }
 
-        playerSpeed = playerVelocity.magnitude;
+        //playerSpeed = playerVelocity.magnitude; //po co to?
         controller.Move(playerVelocity * Time.deltaTime);
     }
 

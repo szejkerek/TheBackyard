@@ -374,6 +374,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3228225958238651853, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 11400000, guid: b39a649c0af6cdc4892082f4d29c39e0, type: 2}
     - target: {fileID: 6725878863302560261, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
       propertyPath: m_LocalPosition.x
       value: 277.43423
@@ -414,6 +418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7511385981348262511, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 11400000, guid: e345762e4aa1aff4087220db7b74bc8e, type: 2}
     - target: {fileID: 7830053338134130872, guid: 6b2c142030919e74194c9ca077601d04, type: 3}
       propertyPath: m_Name
       value: DayManagement
