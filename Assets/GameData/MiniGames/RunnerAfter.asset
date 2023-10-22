@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RunnerAfter
   m_EditorClassIdentifier: 
   <SceneIndex>k__BackingField: 3
-  <Preview>k__BackingField: {fileID: 0}
+  <Preview>k__BackingField: {fileID: 21300000, guid: e8a42a33e283b9b48b7f5aee2cbd16a9, type: 3}
   <MinigameName>k__BackingField: Tag!
-  <PotentialWin>k__BackingField: 10
-  <PotentialLose>k__BackingField: 6
+  <PossibleWin>k__BackingField: 30
+  <PossibleLost>k__BackingField: 20
   <TimeSpend>k__BackingField: 3

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArenaManager : Singleton<ArenaManager>
@@ -34,7 +32,7 @@ public class ArenaManager : Singleton<ArenaManager>
 
     private ArenaInformation DebugArenaInfo()
     {
-        Debug.Log("Generating debug arena info");
+        Debug.Log("Generating debug arena info...");
         ArenaInformation info = new ArenaInformation();
         info.moneyWin = 0;
         info.moneyLoss = 0;
