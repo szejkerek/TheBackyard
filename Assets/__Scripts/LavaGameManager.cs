@@ -9,11 +9,14 @@ using TMPro;
 using Tayx.Graphy.Utils.NumString;
 using System;
 
+/// <summary>
+/// Manages the gameplay of the lava mini-game.
+/// </summary>
 public class LavaGameManager : MonoBehaviour
 {
     [Header("Game settings")]
     [SerializeField] private int touchLimit;
-    [SerializeField] private int touchUpwardsFroce;
+    [SerializeField] private int touchUpwardsForce;
     [SerializeField] private int gameTimeInSeconds;
     [SerializeField] private float lavaDropdownSpeed;
     public UnityEvent playerWonEvent;
@@ -52,11 +55,12 @@ public class LavaGameManager : MonoBehaviour
     private int currentStep = 0;
     private bool lavaHasStarted = false;
 
-
-
+    /// <summary>
+    /// Called on the frame when a script is enabled just before any of the Update methods are called the first time.
+    /// </summary>
     private void Awake()
     {
-        if(player)
+        if (player)
         {
             pm = player.GetComponent<PlayerMovement>();
         }
@@ -70,12 +74,18 @@ public class LavaGameManager : MonoBehaviour
         winTimer.Start();
     }
 
+    /// <summary>
+    /// Called when the script instance is being loaded.
+    /// </summary>
     private void Start()
     {
         timerIsRunning = true;
         AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.FloorIsLava);
     }
 
+    /// <summary>
+    /// Called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
     void Update()
     {
         if (timerIsRunning)
@@ -100,13 +110,16 @@ public class LavaGameManager : MonoBehaviour
             }
         }
 
-        if(lavaHasStarted == true)
+        if (lavaHasStarted == true)
         {
             winTimer.Update(Time.deltaTime * 1000.0f);
             timeLeft = Clock.FormatToMinSec((int)winTimer.TimeLeft);
         }
-
     }
+
+    /// <summary>
+    /// Starts the lava mini-game.
+    /// </summary>
     void StartLava()
     {
         lavaPool.gameObject.SetActive(true);
@@ -119,6 +132,10 @@ public class LavaGameManager : MonoBehaviour
         Invoke(nameof(SuddenDeath), secondsToSuddenDeath);
     }
 
+    /// <summary>
+    /// Called when an object triggers the lava.
+    /// </summary>
+    /// <param name="collidedObject">The object that triggered the lava.</param>
     void OnObjectLavaTrigger(GameObject collidedObject)
     {
         if (collidedObject != player || pm.Velocity.y > 0.0f)
@@ -126,18 +143,20 @@ public class LavaGameManager : MonoBehaviour
             return;
         }
 
-        if(touchesSoFar >= touchLimit)
+        if (touchesSoFar >= touchLimit)
         {
             OnPlayerLost();
-
             return;
         }
 
-        pm.JumpWithHeight(touchUpwardsFroce);
+        pm.JumpWithHeight(touchUpwardsForce);
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.SizzleOnce);
         touchesSoFar++;
     }
 
+    /// <summary>
+    /// Initiates sudden death mode for the lava.
+    /// </summary>
     void SuddenDeath()
     {
         timerText.color = Color.red;
@@ -147,6 +166,9 @@ public class LavaGameManager : MonoBehaviour
         lavaPool.Active = true;
     }
 
+    /// <summary>
+    /// Cycles through different states of the lava pool.
+    /// </summary>
     void CycleThroughLavaPoolState()
     {
         lavaPool.UpwardsGrowthPerSecond = MathF.Abs(growthSteps[currentStep] * sign);
@@ -162,6 +184,9 @@ public class LavaGameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when the player wins the mini-game.
+    /// </summary>
     private void OnPlayerWon()
     {
         lavaPool.Active = true;
@@ -176,6 +201,9 @@ public class LavaGameManager : MonoBehaviour
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Win);
     }
 
+    /// <summary>
+    /// Called when the player loses the mini-game.
+    /// </summary>
     private void OnPlayerLost()
     {
         CancelInvoke();
@@ -197,6 +225,11 @@ public class LavaGameManager : MonoBehaviour
         AudioManager.Instance.StopGlobalSound();
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.Lose);
     }
+
+    /// <summary>
+    /// Displays the remaining time on the timer.
+    /// </summary>
+    /// <param name="timeToDisplay">The time remaining to be displayed.</param>
     void DisplayTime(float timeToDisplay)
     {
         if (timeToDisplay > 0)

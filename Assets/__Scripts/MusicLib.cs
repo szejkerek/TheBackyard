@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ScriptableObject containing a library of music clips.
+/// </summary>
 [CreateAssetMenu(menuName = "AudioData/MusicLib", fileName = "MusicLib")]
 public class MusicLib : ScriptableObject
 {
