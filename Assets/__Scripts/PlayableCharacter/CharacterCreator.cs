@@ -44,7 +44,7 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Creates a character with the specified <paramref name="characterInfo"/>.
+    /// Creates a character with the specified character info
     /// </summary>
     /// <param name="characterInfo">Character information to use for creating the character.</param>
     public void Create(CharacterInfo characterInfo)
