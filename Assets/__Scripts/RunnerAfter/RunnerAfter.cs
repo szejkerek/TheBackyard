@@ -8,12 +8,12 @@ using UnityEngine.AI;
 public class RunnerAfter : MonoBehaviour
 {
     /// <summary>
-    /// The current instance of the runner.
+    /// Refference to the current instance of the runner.
     /// </summary>
     public RunnerAfter currentRunnerAfter;
 
     /// <summary>
-    /// The previous runner instance in the tagging sequence.
+    /// Refference to the previous runner instance in the tagging sequence.
     /// </summary>
     public RunnerAfter previousRunnerAfter = null;
 
