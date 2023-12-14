@@ -68,7 +68,7 @@ public class CharacterAppearanceCreator : MonoBehaviour
     [SerializeField] private SpriteRenderer LegL;
 
     /// <summary>
-    /// Generates a character appearance based on the provided <paramref name="customModular"/>.
+    /// Generates a character appearance based on the provided data.
     /// </summary>
     /// <param name="customModular">Customized modular set for the character appearance.</param>
     public void GenerateCharacterAppearance(CustomModularSet customModular)
