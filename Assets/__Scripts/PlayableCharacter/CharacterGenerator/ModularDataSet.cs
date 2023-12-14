@@ -106,7 +106,7 @@ public class CustomModularSet
     public Sprite Nose;
 
     /// <summary>
-    /// Randomizes the set based on the provided <paramref name="modularDataSet"/>.
+    /// Randomizes the provided set.
     /// </summary>
     /// <param name="modularDataSet">The dataset to use for randomization.</param>
     public void RandomizeSet(ModularDataSet modularDataSet)
