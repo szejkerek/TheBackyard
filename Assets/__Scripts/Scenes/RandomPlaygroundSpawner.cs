@@ -50,24 +50,19 @@ public class RandomPlaygroundSpawner : MonoBehaviour
     {
         for (int i = 0; i < BigSpawnCount; i++)
         {
-            // Randomly select a big GameObject from the SpawnablesBig array
             int SpawnablesArrayIndex = Random.Range(0, SpawnablesBig.Length);
-
-            // Generate a random position within the specified area
             Vector3 pos = new Vector3(
                 Random.Range(BottomLeft.x, TopRight.x),
                 SpawnHeight,
                 Random.Range(BottomLeft.z, TopRight.z)
             );
 
-            // Instantiate the selected big GameObject at the random position with a random rotation
             GameObject g = Instantiate(
                 SpawnablesBig[SpawnablesArrayIndex],
                 pos,
                 Quaternion.Euler(new Vector3(0, Random.Range(1, 8) * 45, 0))
             );
 
-            // Set the parent of the instantiated GameObject to the spawner
             g.transform.parent = transform;
         }
     }

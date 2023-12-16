@@ -57,12 +57,10 @@ public class CharacterSelectionManager : Singleton<CharacterSelectionManager>
     {
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
 
-        // Assign the selected character information without randomization.
         AssignCharacterInfo(first, 0, randomize: false);
         AssignCharacterInfo(sencond, 1, randomize: false);
         AssignCharacterInfo(third, 2, randomize: false);
 
-        // Load the Night Management scene.
         SceneManager.Instance.LoadScene(SceneEnum.NightManagementScene);
     }
 
@@ -80,7 +78,6 @@ public class CharacterSelectionManager : Singleton<CharacterSelectionManager>
             creator.CreateRandom();
         }
 
-        // Retrieve the character information from the creator and assign it to the GameManager.
         CharacterInfo character = creator.CharacterInfo;
         GameManager.Instance.PlayableCharacters[index] = character;
     }

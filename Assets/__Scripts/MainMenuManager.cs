@@ -12,7 +12,6 @@ public class MainMenuManager : Singleton<MainMenuManager>
     /// </summary>
     private void Start()
     {
-        // Play the global music for the main menu.
         AudioManager.Instance.PlayGlobalMusic(AudioManager.Instance.MusicLib.MenuKids);
     }
 
@@ -21,10 +20,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
     /// </summary>
     public void LoadCharacterSelection()
     {
-        // Play a mouse click sound effect.
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
-
-        // Load the character selection scene.
         SceneManager.Instance.LoadScene(SceneEnum.CharacterSelection);
     }
 
@@ -33,10 +29,8 @@ public class MainMenuManager : Singleton<MainMenuManager>
     /// </summary>
     public void LoadCredits()
     {
-        // Play a mouse click sound effect.
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
 
-        // Load the credits scene.
         SceneManager.Instance.LoadScene(SceneEnum.Credits);
     }
 
@@ -45,10 +39,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
     /// </summary>
     public void ExitGame()
     {
-        // Play a mouse click sound effect.
         AudioManager.Instance.PlayGlobalSound(AudioManager.Instance.SFXLib.MouseClick);
-
-        // Exit the application.
         Application.Quit();
     }
 }

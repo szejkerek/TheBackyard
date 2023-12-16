@@ -31,14 +31,10 @@ public class MinigamePanel : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        // Attach the OnApply method to the button's click event.
         applyButton.onClick.AddListener(OnApply);
-
-        // Set UI elements based on the provided mini-game information.
         title.text = minigame.MinigameName;
         preview.sprite = minigame.Preview;
 
-        // Randomize and display mini-game statistics.
         int win = RandomizeStat(minigame.PossibleWin, 6);
         int lose = RandomizeStat(minigame.PossibleLost, 3);
         int time = RandomizeStat(minigame.TimeSpend, 1);
@@ -47,7 +43,6 @@ public class MinigamePanel : MonoBehaviour
         possibleLost.text = "Lose: " + lose.ToString();
         timeSpend.text = "Time: " + time.ToString();
 
-        // Store randomized values in temporary ArenaInformation.
         tempArenaInfo.moneyWin = win;
         tempArenaInfo.moneyLoss = lose;
         tempArenaInfo.timeLoss = time;

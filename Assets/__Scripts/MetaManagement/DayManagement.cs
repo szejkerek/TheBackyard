@@ -16,7 +16,6 @@ public class DayManagement : Singleton<DayManagement>
 
     private void Start()
     {
-        // Initialize references and set up the UI.
         characterPicker.gameObject.SetActive(false);
         cycleManager = MetaGameplayManager.Instance.CycleManager;
         timeText.text = $"Time left: {cycleManager.HoursLeft}h";
@@ -35,7 +34,6 @@ public class DayManagement : Singleton<DayManagement>
             return;
         }
 
-        // Set the selected character and initiate the arena scene loading.
         arenaInformation.character = GameManager.Instance.PlayableCharacters[characterIndex];
         GameManager.Instance.SetArenaInformation(arenaInformation);
         SceneManager.Instance.LoadScene(arenaInformation.sceneEnum);
@@ -49,15 +47,11 @@ public class DayManagement : Singleton<DayManagement>
     {
         int hoursLeft = MetaGameplayManager.Instance.CycleManager.HoursLeft;
         arenaInformation = newArenaInformation;
-
-        // Check if there is enough time left to enter the selected arena.
         if (arenaInformation.timeLoss >= hoursLeft)
         {
             Debug.LogWarning($"Cannot Go to this arena with {hoursLeft} hours left");
             return;
         }
-
-        // Update UI and enable character selection.
         minigamePicker.gameObject.SetActive(false);
         characterPicker.gameObject.SetActive(true);
     }

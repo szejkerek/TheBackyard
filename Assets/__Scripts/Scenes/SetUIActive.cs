@@ -7,9 +7,6 @@ using UnityEngine;
 /// </summary>
 public class SetUIActive : MonoBehaviour
 {
-    /// <summary>
-    /// Flag indicating whether the UI should be visible or not.
-    /// </summary>
     public bool visibleUI;
 
     /// <summary>

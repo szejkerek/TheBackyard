@@ -10,7 +10,7 @@ using UnityEngine;
 public class ArenaManager : Singleton<ArenaManager>
 {
     /// <summary>
-    /// The current information about the arena, including rewards/punishments.
+    /// The current information about the arena.
     /// </summary>
     ArenaInformation currentInfo;
 
@@ -19,17 +19,14 @@ public class ArenaManager : Singleton<ArenaManager>
     /// </summary>
     private void Start()
     {
-        // Get the current arena information from the game manager.
         currentInfo = GameManager.Instance.ArenaInformation;
 
-        // If current information is not available, generate debug information.
         if (currentInfo == null)
         {
             Debug.LogError("Couldn't get arena information!");
             currentInfo = DebugArenaInfo();
         }
 
-        // Assign attributes to characters in the arena.
         AssignCharactersAttributes();
     }
 
@@ -38,16 +35,11 @@ public class ArenaManager : Singleton<ArenaManager>
     /// </summary>
     private void AssignCharactersAttributes()
     {
-        // Find all character creators in the scene.
         List<CharacterCreator> characterList = FindObjectsOfType<CharacterCreator>().ToList();
-
-        // Randomize attributes for AI characters.
         foreach (CharacterCreator character in characterList)
         {
             character.CreateRandom();
         }
-
-        // Set the attributes for the player character.
         CharacterCreator player = FindObjectOfType<PlayerMovement>().GetComponent<CharacterCreator>();
         player.Create(currentInfo.character);
     }

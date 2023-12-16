@@ -32,10 +32,8 @@ public class CameraTargetFollower : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // If the target is not valid, return.
         if (!validTarget) return;
 
-        // Store the initial offset and set the camera position.
         initOffset = transform.position;
         transform.position = playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight + offset;
     }
@@ -45,10 +43,7 @@ public class CameraTargetFollower : MonoBehaviour
     /// </summary>
     void LateUpdate()
     {
-        // If the target is not valid, return.
         if (!validTarget) return;
-
-        // Smoothly interpolate the camera position towards the target's position.
         transform.position = Vector3.Lerp(transform.position, playerMovement.transform.position + initOffset + Vector3.up * playerMovement.JumpHeight + offset, speed * Time.deltaTime);
     }
 }

@@ -66,7 +66,6 @@ public class MoneyHolder
 
         money -= amount;
 
-        // Ensure the money total does not go below zero.
         if (money < 0)
         {
             money = 0;

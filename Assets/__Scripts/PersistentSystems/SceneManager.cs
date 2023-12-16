@@ -59,30 +59,21 @@ public class SceneManager : Singleton<SceneManager>
     /// <returns>Yield instruction.</returns>
     IEnumerator LoadSceneRoutine(int sceneIndex)
     {
-        // Fade out the screen before loading the new scene
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.FadeDuration);
 
-        // Load the scene asynchronously
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
         operation.allowSceneActivation = false;
 
         float timer = 0f;
-        // Wait for the fade duration or until the operation is done
         while (timer <= fadeScreen.FadeDuration && !operation.isDone)
         {
             timer += Time.deltaTime;
             yield return null;
         }
-
-        // Trigger the OnSceneChanged event
         OnSceneChanged?.Invoke();
         operation.allowSceneActivation = true;
-
-        // Fade in the screen after the new scene is loaded
         fadeScreen.FadeIn();
-
-        // Trigger the OnSceneFullyLoaded event
         OnSceneFullyLoaded?.Invoke();
     }
 }

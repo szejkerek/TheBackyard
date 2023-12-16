@@ -14,16 +14,12 @@ public static class Extensions
     /// <returns>A randomly selected element from the list.</returns>
     public static T GetRandomElement<T>(this List<T> list)
     {
-        // Check if the list is empty and log an error if so.
         if (list.Count == 0)
         {
             Debug.LogError($"List is empty!!!");
         }
 
-        // Generate a random index within the bounds of the list.
         int randomIndex = Random.Range(0, list.Count);
-
-        // Return the randomly selected element from the list.
         return list[randomIndex];
     }
 }

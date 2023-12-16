@@ -58,13 +58,11 @@ public class CharacterCreator : MonoBehaviour
     /// </summary>
     public void CreateRandom()
     {
-        // Randomize a modular set for appearance and create character information.
         CustomModularSet customSet = characterAppearanceCreator.RandomizeSet();
         CharacterStats stats = new CharacterStats();
         stats.RandomizeStats();
         CharacterInfo characterInfo = new CharacterInfo(stats, customSet);
 
-        // Set the character information and generate the appearance.
         this.characterInfo = characterInfo;
         characterAppearanceCreator.GenerateCharacterAppearance(characterInfo.customSet);
     }
