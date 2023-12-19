@@ -2,6 +2,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+/// <summary>
+/// Controls the movement and interactions of the player character.
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Parameters")]
@@ -16,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Distance for which ground layer is checked for")]
     [SerializeField] private float groundCastCheckDistance = 0.1f;
 
-    //[Tooltip("Distance for which ground (ceiling) layer is checked for")]
     [SerializeField] private float ceilingCastCheckDistance = 0.1f;
 
     [Tooltip("Distance for which ladder layer is checked for")]
@@ -31,10 +33,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Visible internal variables (do not change)")]
     private Vector3 playerVelocity;
     private Vector3 playerFlatVelocity;
-    //[SerializeField] private float playerSpeed;
     private bool isGrounded;
-    [SerializeField] private bool hitCeiling;
-    //[SerializeField] private bool isOnDownSlope;
+    private bool hitCeiling;
     private bool isClimbingLadder;
     private Vector3 groundNormal;
     private Vector3 ladderNormal;
@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
     private float lastJumpTimestamp;
     public Vector3 rightMovement;
 
-
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -61,16 +60,14 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = controller.isGrounded;
-        //isGrounded = CheckForBottomCollision(groundMask, groundCastCheckDistance) || CheckForBottomCollision(ladderMask, ladderCastCheckDistance);
         hitCeiling = CheckForTopCollision(groundMask, ceilingCastCheckDistance) || CheckForTopCollision(ladderMask, ladderCastCheckDistance);
-        //isOnDownSlope = PlayerOnDownSlope();
         isClimbingLadder = PlayerOnLadder();
 
         Vector3 forwardMovement = forward * Input.GetAxisRaw("Vertical");
         rightMovement = right * Input.GetAxisRaw("Horizontal");
         Vector3 wishDir = Vector3.Normalize(rightMovement + forwardMovement) * movementSpeed;
 
-        if (isGrounded && playerVelocity.y < 0.0f /*|| hitCeiling && playerVelocity.y > 0.0f*/)
+        if (isGrounded && playerVelocity.y < 0.0f)
         {
             playerVelocity.y = -5f;
         }
@@ -84,44 +81,31 @@ public class PlayerMovement : MonoBehaviour
         playerVelocity.x = wishDir.x;
         playerVelocity.y += gravityForce * Time.deltaTime;
         playerVelocity.z = wishDir.z;
-        
+
         playerFlatVelocity = new Vector3(playerVelocity.x, 0.0f, playerVelocity.z);
 
-        /*if(isOnDownSlope)
-        {
-            playerVelocity = Vector3.ProjectOnPlane(playerFlatVelocity, groundNormal).normalized * movementSpeed + Vector3.up * playerVelocity.y;
-        }*/
-
-        if(isClimbingLadder)
+        if (isClimbingLadder)
         {
             CorrectLadderMovement();
         }
 
-        //playerSpeed = playerVelocity.magnitude; //po co to?
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Makes the player jump with a specified height.
+    /// </summary>
+    /// <param name="targetHeight">The target jump height.</param>
     public void JumpWithHeight(float targetHeight)
     {
         playerVelocity.y = Mathf.Sqrt(targetHeight * -3.0f * gravityForce);
     }
 
-    private bool PlayerOnDownSlope()
-    {
-        Ray ray = new(transform.position + Vector3.down, Vector3.down);
-        Physics.Raycast(ray, out RaycastHit rayHit, 0.5f);
-
-        float angle = Vector3.Angle(Vector3.up, rayHit.normal);
-        groundNormal = rayHit.normal;
-
-        return angle > 0.0f && angle < controller.slopeLimit && Vector3.Dot(groundNormal, playerFlatVelocity) > 0.0f;
-    }
-
     private bool PlayerOnLadder()
     {
         bool isTouchingLadder = Physics.SphereCast(transform.position + Vector3.down, 0.5f, playerFlatVelocity, out RaycastHit rayHit, 0.5f, ladderMask);
-        
-        if(!isTouchingLadder)
+
+        if (!isTouchingLadder)
         {
             return false;
         }

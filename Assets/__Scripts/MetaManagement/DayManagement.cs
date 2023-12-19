@@ -2,15 +2,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages activities during the day, such as selecting characters and entering arenas.
+/// </summary>
 public class DayManagement : Singleton<DayManagement>
 {
     [SerializeField] TMP_Text timeText;
     [SerializeField] GameObject minigamePicker;
     [SerializeField] GameObject characterPicker;
 
+    private CycleManager cycleManager;
+    private ArenaInformation arenaInformation;
 
-    CycleManager cycleManager;
-    ArenaInformation arenaInformation;
     private void Start()
     {
         characterPicker.gameObject.SetActive(false);
@@ -19,18 +22,27 @@ public class DayManagement : Singleton<DayManagement>
         MetaGameplayManager.Instance.SetActivePersistentUI(true);
     }
 
-    public void GoIntoArena(int characterIndex) 
+    /// <summary>
+    /// Initiates entry into an arena based on the selected character.
+    /// </summary>
+    /// <param name="characterIndex">The index of the selected character.</param>
+    public void GoIntoArena(int characterIndex)
     {
         if (arenaInformation == null)
         {
             Debug.LogWarning($"Arena information is null");
             return;
         }
+
         arenaInformation.character = GameManager.Instance.PlayableCharacters[characterIndex];
         GameManager.Instance.SetArenaInformation(arenaInformation);
         SceneManager.Instance.LoadScene(arenaInformation.sceneEnum);
     }
 
+    /// <summary>
+    /// Sets the information for the upcoming arena and prepares for character selection.
+    /// </summary>
+    /// <param name="newArenaInformation">The new arena information.</param>
     public void SetArenaInformation(ArenaInformation newArenaInformation)
     {
         int hoursLeft = MetaGameplayManager.Instance.CycleManager.HoursLeft;

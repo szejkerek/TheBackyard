@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// ScriptableObject representing a mini-game configuration.
+/// </summary>
 [CreateAssetMenu(fileName = "MiniGameSO", menuName = "MiniGameSO", order = 1)]
 public class MiniGameSO : ScriptableObject
 {

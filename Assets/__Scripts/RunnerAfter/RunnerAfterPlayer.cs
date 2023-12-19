@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Represents the player-controlled runner in a tagging game.
+/// </summary>
 public class RunnerAfterPlayer : RunnerAfter
 {
+    /// <summary>
+    /// Updates the player-controlled runner's behavior based on the game logic.
+    /// </summary>
     private void Update()
     {
         closestRunner = GetClosestRunner(runners);
@@ -12,6 +18,9 @@ public class RunnerAfterPlayer : RunnerAfter
         TagRunner();
     }
 
+    /// <summary>
+    /// Overrides the base class method to implement specific tagging behavior for the player.
+    /// </summary>
     public override void TagRunner()
     {
         if (currentRunnerAfter != this)
@@ -28,7 +37,7 @@ public class RunnerAfterPlayer : RunnerAfter
 
         if (distance > taggingRange.radius)
         {
-            //Debug.Log("Distance is bigger than radius. PLAYER");
+            // Debug.Log("Distance is bigger than radius. PLAYER");
             return;
         }
 

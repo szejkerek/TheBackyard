@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ScriptableObject containing a library of sound effects (SFX).
+/// </summary>
 [CreateAssetMenu(menuName = "AudioData/SFXLib", fileName = "SFXLib")]
 public class SFXLib : ScriptableObject
 {
