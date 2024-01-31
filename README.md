@@ -1,4 +1,4 @@
-# GameJamLublin
+# TheBackyard
 Travel back in time to the good old days and reimagine the environment through the eyes of a child. But most importantly - collect as many Caps as you can!
 
 The Backyard is a single player adventure about playing the beloved childhood games such as Tag or the Floor is Lava. Customize your gang of mischevious children and play various dextirity-based minigames. Between the games develop your Treehouse and collect Caps.
