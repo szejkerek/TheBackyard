@@ -11,8 +11,9 @@ The Backyard is a single player adventure about playing the beloved childhood ga
 
 
 # Movement:
+
 WSAD/Arrow Keys - basic movement
+
 Space bar - jumping
+
 E - tag nearby player
-
-
