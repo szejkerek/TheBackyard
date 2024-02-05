@@ -1,4 +1,15 @@
 # TheBackyard
+
+[![Made With Unity](https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity)](https://unity.com/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/szejkerek/TheBackyard/UnityCI.yml)](https://github.com/szejkerek/TheBackyard/actions)
+[![License](https://img.shields.io/github/license/szejkerek/TheBackyard?logo=github)]()
+[![Last Commit](https://img.shields.io/github/last-commit/szejkerek/TheBackyard?logo=Mapbox&color=orange)](https://github.com/szejkerek/TheBackyard/commits/main/)
+[![Repo Size](https://img.shields.io/github/repo-size/szejkerek/TheBackyard?logo=VirtualBox)]()
+[![GitHub Release](https://img.shields.io/github/v/release/szejkerek/TheBackyard)](https://github.com/szejkerek/TheBackyard/releases)
+[![GitHub stars](https://img.shields.io/github/stars/szejkerek/TheBackyard?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
+[![GitHub user stars](https://img.shields.io/github/stars/szejkerek?affiliations=OWNER&branch=main&label=User%20Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
+
+
 Travel back in time to the good old days and reimagine the environment through the eyes of a child. But most importantly - collect as many Caps as you can!
 
 The Backyard is a single player adventure about playing the beloved childhood games such as Tag or the Floor is Lava. Customize your gang of mischevious children and play various dextirity-based minigames. Between the games develop your Treehouse and collect Caps.
