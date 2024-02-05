@@ -1,10 +1,8 @@
 # TheBackyard
 
 [![Made With Unity](https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity)](https://unity.com/)
-[![License](https://img.shields.io/github/license/szejkerek/TheBackyard?logo=github)]()
 [![Last Commit](https://img.shields.io/github/last-commit/szejkerek/TheBackyard?logo=Mapbox&color=orange)](https://github.com/szejkerek/TheBackyard/commits/main/)
 [![Repo Size](https://img.shields.io/github/repo-size/szejkerek/TheBackyard?logo=VirtualBox)]()
-[![GitHub Release](https://img.shields.io/github/v/release/szejkerek/TheBackyard)](https://github.com/szejkerek/TheBackyard/releases)
 [![GitHub stars](https://img.shields.io/github/stars/szejkerek/TheBackyard?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
 [![GitHub user stars](https://img.shields.io/github/stars/szejkerek?affiliations=OWNER&branch=main&label=User%20Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
 
